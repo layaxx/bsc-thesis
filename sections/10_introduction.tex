@@ -1,19 +1,33 @@
 \section{Introduction}
-% What is CBR?
-% What is Angry-birds?
-% What is AI-Birds?
+
+Angry Birds is physics-based puzzle game where the player has to hit targets with ballistic projectiles in order to clear a level and gain score.
+Targets may be hidden behind objects, most of which can be moved or destroyed when hit.
+
+AIBIRDS is a competition in which these tasks must be performed by computer agents instead of humans.
 
 
 \subsection{Previous Work}
-In previous work, we devised a strategy to use Case-based reasoning to improve the performance of the agent. This strategy used a quantitative approach. Similarity between situations was judged based on position and size of objects.
+In previous work, we devised a strategy to use case-based reasoning to allow the agent to remember good shots und use them again in similar scenarios, even though the strategy that originally produced this shot may not have a high priority.
+Case-based reasoning is a strategy in artificial intelligence that aims to modify known solutions to problems in order to make them applicable to the problem at hand.
+To do so, relevant information about the problem and the associated solution need to be stored and similarity between problems must be judged.
+If problems are similar enough, the solution can be transformed to solve the new problem.
+In out implementation, similarity between scenarios was judged quantitatively based on position and size of objects.
 
 
 \subsection{Goals \& Approaches}
 
-Now the goal is to replace this with a qualitative solution.
+Now the goal is to devise a qualitative solution.
 Instead of absolute positions, relations between objects shall be considered when determining applicability of cases.
+This will hopefully lead to an improvement in performance compared to the quantitative approach, as that came with limitations as to what objects were considered and when two scenes where estimated to be transferable.
+For example, a few pixels could make the difference between an object being irrelevant or an actual obstacle. 
+But due to thresholds we used in the quantitative approach, this distinction may not occur.
 
-The main objective will consist of figuring out, which set of relations is sufficient for this task. Basis for this is a minimal implementation of an AIBirds Agent, that uses only the CBR strategy and performs a random 
+The main objective will consist of figuring out which set of relations is sufficient for this task.
+
+Basis for this is a minimal implementation of an AIBirds Agent, that uses only the CBR strategy and performs a random
 % or semi random
-shot if no applicable case can be found. 
+shot if no applicable case can be found.
 This will allow for easy comparison between CBR implementations without interference from previously devised strategies.
+
+After performing a shot derived from a CBR strategy, the result will be used to refine the underlying case.
+This is supposed to enable finding out which relations between objects are actually relevant to replicability and which are not.
