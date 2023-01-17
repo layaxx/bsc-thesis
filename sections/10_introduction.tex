@@ -1,4 +1,4 @@
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 
 Angry Birds is physics-based puzzle game where the player has to hit targets with ballistic projectiles in order to clear a level and gain score.
 Targets may be hidden behind objects, most of which can be moved or destroyed when hit.
@@ -20,7 +20,8 @@ Now the goal is to devise a qualitative solution.
 Instead of absolute positions, relations between objects shall be considered when determining applicability of cases.
 This will hopefully lead to an improvement in performance compared to the quantitative approach, as that came with limitations as to what objects were considered and when two scenes where estimated to be transferable.
 For example, a few pixels could make the difference between an object being irrelevant or an actual obstacle. 
-But due to thresholds we used in the quantitative approach, this distinction may not occur.
+But due to thresholds we used in the quantitative approach, this distinction may not occur. % TODO: add image of a level where this could be an issue
+% TODO: Check wether this level could then be beaten using QualCBR
 
 The main objective will consist of figuring out which set of relations is sufficient for this task.
 
@@ -28,6 +29,7 @@ Basis for this is a minimal implementation of an AIBirds Agent, that uses only t
 % or semi random
 shot if no applicable case can be found.
 This will allow for easy comparison between CBR implementations without interference from previously devised strategies.
+The main goal here is to find a configuration, i.e. a subset of the qualitative predicates, for which the agent achieves the highest score on a set of AngryBirds levels.
 
 After performing a shot derived from a CBR strategy, the result will be used to refine the underlying case.
-This is supposed to enable finding out which relations between objects are actually relevant to replicability and which are not.
+This is supposed to enable determining the relevancy of relations between objects to replicability of cases.

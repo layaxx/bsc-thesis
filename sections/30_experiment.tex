@@ -1,0 +1,20 @@
+\section{Experimental Evaluation}\label{sec:experimental}
+To evaluate the performance and capability of the devised algorithm, as well as compare different implementations and sets of predicates against each other, the agent can be run on a set of levels.
+A script then logs relevant information, such that runs with different agent versions can be compared.
+The most important metric to be logged is which levels the agent is capable of beating at all and the highest achieved score per level.
+Other metrics include which strategies where used for each shot.
+This is especially important to determine the frequency with which \acs{CBR} cases are found to be applicable and the success rate of adaptation.
+
+
+\subsection{Settings}\label{subsec:settings}
+To ensure comparability, settings must be the same between runs.
+\subsection{Levels}\label{subsec:levels}
+% TODO: Which levels to evaluate?
+% - standard levels
+% - competition levels?
+% - levels that are hard to beat for current agents?
+% - a mix of the above?
+\subsection{Caveats}\label{subsec:caveats}
+Potential problems to keep in mind: Level-selection is negligible when comparing two versions of the same agent that differ in strategies at hand or their implementation but not in the level selection process.
+% TODO: is level selection important or not?? Not sure
+% Should the agent play every level in the set for a predetermined amount of time? Or let the agent decide for itself?
