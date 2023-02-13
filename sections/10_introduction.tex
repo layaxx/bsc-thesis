@@ -6,32 +6,3 @@ Targets may be hidden behind objects, most of which can be moved or destroyed wh
 AIBIRDS is a competition in which these tasks must be performed by computer agents instead of humans.
 
 
-\subsection{Previous Work}
-In previous work, we devised a strategy to use case-based reasoning to allow the agent to remember good shots und use them again in similar scenarios, even though the strategy that originally produced this shot may not have a high priority.
-Case-based reasoning is a strategy in artificial intelligence that aims to modify known solutions to problems in order to make them applicable to the problem at hand.
-To do so, relevant information about the problem and the associated solution need to be stored and similarity between problems must be judged.
-If two problems are similar enough, the solution can be transformed to solve the new problem.
-In out implementation, similarity between scenarios was judged quantitatively based on position and size of objects.
-
-
-\subsection{Goals \& Approaches}
-
-Now the goal is to devise a qualitative solution.
-Instead of absolute positions, relations between objects shall be considered when determining applicability of cases.
-This will hopefully lead to an improvement in performance compared to the quantitative approach, as that came with limitations as to what objects were considered and when two scenes where estimated to be transferable. % TODO: should evaluation also be run against the quantitative approach?
-For example, a few pixels could make the difference between an object being irrelevant or an actual obstacle. 
-But due to thresholds we used in the quantitative approach, this distinction may not occur. % TODO: add image of a level where this could be an issue
-% TODO: Check wether this level could then be beaten using QualCBR
-
-The main objective will consist of comparing subsets of quantitative relations to find those that maximize the score the agent can achieve in-game. % TODO: what relations are available?
-% -> above, below, toTheLeft, toTheRight, touches, ...
-% -> how should empty space be represented (with predicates, as separate object, ...)
-
-Basis for this is a minimal implementation of an AIBirds Agent, that uses only the CBR strategy and performs a random
-% or semi random
-shot if no applicable case can be found.
-This will allow for easy comparison between CBR implementations without interference from previously devised strategies.
-The main goal here is to find a configuration, i.e. a subset of the qualitative predicates, for which the agent achieves the highest score on a set of AngryBirds levels.
-
-After performing a shot derived from a CBR strategy, the result will be used to refine the underlying case.
-This is supposed to enable determining the relevancy of relations between objects to replicability of cases.

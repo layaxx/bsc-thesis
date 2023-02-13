@@ -8,15 +8,20 @@ This is especially important to determine the frequency with which \acs{CBR} cas
 % TODO: Look at how/if performance (both time and score maybe) changes with time/amount of levels played 
 
 
-\subsection{Settings}\label{subsec:settings}
+\subsection{Settings \& Levels}\label{subsec:experimental-settings}
 To ensure comparability, settings must be the same between runs. These include the levels that are played, the way levels are selected as well as the amount of time the agent can take. % per level or overall?
-\subsection{Levels}\label{subsec:levels}
 % TODO: Which levels to evaluate?
 % - standard levels
 % - competition levels?
 % - levels that are hard to beat for current agents?
 % - a mix of the above?
-\subsection{Caveats}\label{subsec:caveats}
+\subsection{Caveats}\label{subsec:experimental-caveats}
 Potential problems to keep in mind: Level-selection is negligible when comparing two versions of the same agent that differ in strategies at hand or their implementation but not in the level selection process.
 % TODO: is level selection important or not?? Not sure
 % Should the agent play every level in the set for a predetermined amount of time? Or let the agent decide for itself?
+%
+\input{sections/41_experimental_setup.tex}
+%
+\input{sections/42_results.tex}
+%
+\input{sections/43_discussion.tex}
