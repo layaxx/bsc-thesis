@@ -1,6 +1,52 @@
 \section{Implementation}\label{sec:implementation}
 
+The general flow of CBR will look like this: After a successful shot, a new case will be created or an existing one will be updated. When looking for shots to execute, the database of cases can be scanned for matching cases and a plan for a shot can be generated for every match.
+
 % What is a Case in the context of Angry Birds?
+
+\subsection{A case in AngryBirds}\label{subsec:impl-case}
+What does a case in the context of AngryBirds consist of? There are three essential parts: A description of the situation in which this case is valid, a description of the shot and a description of the effects, that we expect this shot to have in this situation.
+
+\paragraph{The situation}
+A description of the situation is necessary so the planner can determine, whether a given scenario is sufficiently similar for the case to provide meaningful input.
+For the qualitative CBR, this description consists of a every object that had been affected by the original shot and a set of relations, that provide more information about those objects and their relation to each others.
+
+
+\paragraph{The shot}
+For the quantitative CBR we has used the target coordinates of the original shot, which were then transformed to a matched scenario.
+Because this Transformation of coordinates will not happen during the qualitative CBR process, a shot is instead represented by an object that the shot was aimed at.
+A drawback of this approach is the inability to do complex shots, that do not directly target an object.
+Examples of such complex shots would be rebound shots.
+Additional information is added however, as along with the target object, qualitative predicates about the shot are saved. These include classification of the trajectory (high vs low shots) and where the target was (supposed to be) hit, i.e. whether the target was above, below or at the center of the target object.
+The latter can only be estimated, however. Due to technical restrictions we can record where the agent was trying to hit the object, but not where the shot actually hit.
+
+
+\paragraph{The Effects}
+There are two main use cases for the expected effects a shot might have. The first is in the planning phase, where these might be used to determine whether this shot will improve the situation at hand, thus enabling complex planning processes for multiple shots in a row.
+After executing a shot, the expected effects can be compared to the observed effects. If the effects match even though the situation was not a perfect match, this can be used to update the case in order to loosen restrictions on the situation.
+If, on the other hand, the situation did match well but the observed effect was notably different from the expected effect,
+% TODO: What then??
+
+\paragraph{When should a new case be added?}
+This question goes back to an entirely different, not yet solved problem: Determining how good a shot was.
+This is nontrivial, as a shot might not kill a target but still improve the overall situation by removing obstacles and enabling better shots at remaining targets.
+A shot that takes out a target might also not be a very good shot if it leads to other targets becoming obstructed and harder to hit.
+Because classifying the quality of a shot is out of scope for this paper, we are gonna assume that shots are good iff they kill one or more targets.
+When the agent has executed a shot that meets this criterion, on of two things can happen: The shot was already based on a CBR shot, then the underlying case can be updated based on the observed effects. Otherwise, the a new case is generated using this shot and its effects.
+
+\paragraph{Determining conditions for applicability of a case}
+
+
+\paragraph{Determining effects of a shot}
+In the previous section, we identified all objects that were impacted by a shot.
+To determine effects, those objects need to be
+
+\paragraph{Relations for describing objects}
+Apart from the rather obvious properties of single objects, such as their general shape("rectangle", "circle", or "poly"), their material("ice", "wood", "stone", "tnt") and their rough dimensions, a key constraint for similarity of scenes is the relative position of objects to each other.
+There are different approaches with different precision.
+The most precise description can be achieved using the Extended Rectangle Algebra introduced by (% TODO: cite paper here
+). Because this was intended to determine stability of structures, this provides very granular information about objects that are close or touching.
+A possible addition could consist of adding information whether object A is close enough to object B such that A could impact B when falling over, which would be encoded as before by ERA either way.
 
 % How are cases generated?
 % How are effects determined?
@@ -8,3 +54,4 @@
 % Can case be used/Which case should be used?
 % "Random" shots of no case matches
 % Updating cases after success/failure
+% protection against trivial cases?
