@@ -35,6 +35,34 @@ Because classifying the quality of a shot is out of scope for this paper, we are
 When the agent has executed a shot that meets this criterion, on of two things can happen: The shot was already based on a CBR shot, then the underlying case can be updated based on the observed effects. Otherwise, the a new case is generated using this shot and its effects.
 
 \paragraph{Determining conditions for applicability of a case}
+The original idea for matching cases was to add a prolog rule for every new case, consisting of a set of required predicates and a set of optional predicates.
+This rule would generate configurations of objects matching every required predicate for a given case and then check the ratio of optional predicates that hold for this configuration.
+This is necessary because we don't only want perfect matches, but close matches as well which can be used to update and generalize cases.
+
+This is therefore an instance of a more general Constraint Satisfaction Problem (Max CSP). which is known to be NP hard.
+
+Thus efficiently implementing this part is a major challenge:
+Configurations cannot be discarded as soon as the first relation fails to hold.
+Even if the only required predicates are the actual objects, i.e. every object must have a counterpart in the scene but all additional information, such as materials, shape and position are optional, the number of possible permutations that have to be checked are too high to be efficiently checked.
+
+Unfortunately, runtime performance is actually important here. While case generation and updating can easily be background tasks that are run separately from the actual agent, the detection of applicable strategies needs to happen in real time.
+In order to maximize the amount of time spent performing shots, and thus potentially solving levels and increasing score, the strategy generation needs to be as fast as possible.
+
+% TODO: add more data here as well
+A possible mitigation could be including more information about the objects as required predicates instead of optionals.
+The most obvious candidates for this would be shape and material.
+% TODO: how much improvement in expectation?
+The drawback is that cases cannot be generalized over those attributes anymore. While for some cases the material of a block might be important, especially when the goal lies in breaking a block, for other cases the material might not matter.
+With this approach, this will not be detected, however, since the case will never match to other materials und thus cannot be updated.
+
+Another way to decrease the number of possible permutations would be decreasing the number of objects associated with a case. Along with an expected decrease in the accuracy of the system, this approach would probably decrease the value for complex planning, as per the definition every object associated with the case is expected to be affected by the shot und thus should be considered during planning.
+Determining which objects to omit would also be non-trivial.
+
+When implemented in Prolog, there is an issue with its backtracking search: Consider a case with 10 objects: If, for a given configuration of 10 matched objects, none of the optional predicates match, exchanging one of the 10 matched objects cannot possible meaningfully change the result
+% TODO: add more data here i guess
+Instead, a randomized approach could be helpful, where the entire configuration is discarded when the percentage of matching optional predicate is below a threshold and a completely new configuration is chosen.
+
+One possibility would be generating a fixed amount of random configurations matching the hard constraints for each case, checking the soft constraints for each configuration. This is not really helpful however. Test show, that even in situations where a perfect match is available, the best match of 10000 iterations on average is slightly over half of predicates % TODO: add data here 
 
 
 \paragraph{Determining effects of a shot}
