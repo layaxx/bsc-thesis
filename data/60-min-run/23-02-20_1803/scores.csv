@@ -1,0 +1,4 @@
+date;timestamp;agent;level;level-set;won;score;time
+2023-02-20;18:03:10.994994;Bambirds (current);4;/home/layaxx/Documents/s7_bsc-thesis/code/Levels/domino_levels;True;58510;434
+2023-02-20;18:10:43.052962;Bambirds (current);2;/home/layaxx/Documents/s7_bsc-thesis/code/Levels/domino_levels;True;25370;230
+2023-02-20;18:14:33.861244;Bambirds (current);16;/home/layaxx/Documents/s7_bsc-thesis/code/Levels/domino_levels;True;50500;1212

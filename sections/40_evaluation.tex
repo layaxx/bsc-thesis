@@ -15,6 +15,32 @@ To ensure comparability, settings must be the same between runs. These include t
 % - competition levels?
 % - levels that are hard to beat for current agents?
 % - a mix of the above?
+
+
+\subsection{Applicability of Cases}\label{subsec:experimental-applicability}
+As stated previously, the hardest part is determining whether a case is applicable to a given scenario.
+The main reason is the number of possible combinations of objects that could match, given that not all constraints have to be met for a case to be considered applicable.
+To further investigate this, the agent was run for 60 minutes in a create only mode, where it only performed random shots and generated cases for shots that killed one or more pigs but did not target them directly.
+
+This generated 60 cases. Each case is associated with a number of affected objects, on average 20 per case $k$ (min: 2, max: 55, median: 20.5).
+If no hard constraints are considered apart from the requirement that every object has to have a match, this means on average there are
+With an average of 40.6667 objects per level $n$ over the test set, this means that
+8.10e+52 possible combinations ($k\sup{n}$) exist that would have to be checked for an average case in an average level.
+Additionally requiring all objects to be unique, i.e. one object in the level cannot be matched to multiple objects in the same case, reduces this number to
+5.25e+29 (binomial coefficient), which, although significantly less, is still far from being viable.
+
+As discussed previously, a possible mitigation is the introduction of additional hard constraints, such as requiring objects to have the same material and shape that they had in the original scenario.
+This has the additional property of discarding entire cases, e.g. when a case requires ice objects but the level does not include any.
+This is helpful from a runtime optimization perspective but limits the generalizability of cases, as for some cases the actual material of some or all objects might not matter.
+How much this cuts down the number of possibilities is hard to calculate, since it depends on the distribution of object types in the levels and therefore cannot be averaged over the entire set as easily.
+If one would calculate the number of possible assignments for a case over every level in the test set, take the mean of those values and then the median of the means for every case, this would work out to 3.58e+18. Again, a significant but insufficient improvement.
+A different, possibly more useful way to look at this would be the sum of configurations over all cases for a given level. This would give us an upper bound of configurations one had to check, if every case possible configuration for every case should be evaluated for a level. On average, this would work out to 4.81e+54 (min: 480 max: 9.83e+55 median: 4.53e+17).
+
+In addition to the greatly increasing number of possible permutation, each object also increases the cost of checking a configuration by adding relations.
+% TODO: quadratic?? add data
+
+% TODO: show curve of match score for levels where there is / is no 100% match available 
+
 \subsection{Caveats}\label{subsec:experimental-caveats}
 Potential problems to keep in mind: Level-selection is negligible when comparing two versions of the same agent that differ in strategies at hand or their implementation but not in the level selection process.
 % TODO: is level selection important or not?? Not sure
@@ -25,3 +51,6 @@ Potential problems to keep in mind: Level-selection is negligible when comparing
 \input{sections/42_results.tex}
 %
 \input{sections/43_discussion.tex}
+
+
+% TODO: Evaluation for effect detection, case updating

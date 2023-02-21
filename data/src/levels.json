@@ -1,0 +1,4272 @@
+[
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 1
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 1
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 2
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 2
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 2
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 2
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 2
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 3
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 3
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 3
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 3
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 4
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 4
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 4
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 5
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 5
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 5
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 5
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 6
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 6
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 6
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 6
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 6
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 6
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 7
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 8
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 9
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 9
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 9
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 9
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 9
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 9
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 9
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 10
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 10
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 11
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 11
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 12
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 12
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 12
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 12
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 12
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 12
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 13
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 14
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 14
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 14
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 14
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 15
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 16
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 16
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 17
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 17
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 18
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "ball",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 19
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 20
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "stone",
+        "shape": "ball",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 20
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 21
+    },
+    {
+        "material": "pork",
+        "shape": "ball",
+        "levelID": 21
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "stone",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "wood",
+        "shape": "rect",
+        "levelID": 21
+    },
+    {
+        "material": "ice",
+        "shape": "rect",
+        "levelID": 21
+    }
+]
