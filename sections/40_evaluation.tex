@@ -9,7 +9,8 @@ This is especially important to determine the frequency with which \acs{CBR} cas
 
 
 \subsection{Settings \& Levels}\label{subsec:experimental-settings}
-To ensure comparability, settings must be the same between runs. These include the levels that are played, the way levels are selected as well as the amount of time the agent can take. % per level or overall?
+To ensure comparability, settings must be the same between runs.
+The level set consists of 21 levels, that have been used in the past to evaluate domino strategies. On average, the levels consist of 40.6667 object.% per level or overall?
 % TODO: Which levels to evaluate?
 % - standard levels
 % - competition levels?
@@ -22,7 +23,7 @@ As stated previously, the hardest part is determining whether a case is applicab
 The main reason is the number of possible combinations of objects that could match, given that not all constraints have to be met for a case to be considered applicable.
 To further investigate this, the agent was run for 60 minutes in a create only mode, where it only performed random shots and generated cases for shots that killed one or more pigs but did not target them directly.
 
-This generated 60 cases. Each case is associated with a number of affected objects, on average 20 per case $k$ (min: 2, max: 55, median: 20.5).
+This generated 60 cases and 1 Megabyte worth of Prolog rules. Each case is associated with a number of affected objects, on average 20 per case $k$ (min: 2, max: 55, median: 20.5).
 If no hard constraints are considered apart from the requirement that every object has to have a match, this means on average there are
 With an average of 40.6667 objects per level $n$ over the test set, this means that
 8.10e+52 possible combinations ($k\sup{n}$) exist that would have to be checked for an average case in an average level.
@@ -37,6 +38,7 @@ If one would calculate the number of possible assignments for a case over every 
 A different, possibly more useful way to look at this would be the sum of configurations over all cases for a given level. This would give us an upper bound of configurations one had to check, if every case possible configuration for every case should be evaluated for a level. On average, this would work out to 4.81e+54 (min: 480 max: 9.83e+55 median: 4.53e+17).
 
 In addition to the greatly increasing number of possible permutation, each object also increases the cost of checking a configuration by adding relations.
+Since for every object the position relative to every other object is stored, this causes a quadratic growth. Although the ERA has more predicates, this does not reflect here since the relation between two objects still consists of exactly one predicate on each axis.
 % TODO: quadratic?? add data
 
 % TODO: show curve of match score for levels where there is / is no 100% match available 

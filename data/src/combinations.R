@@ -76,4 +76,11 @@ factorial(mean_obj_per_level) / factorial(mean_obj_per_level - mean(data))
 
 
 predicates_per_case = c(419, 498, 1532, 1772, 3193, 105, 65, 376, 15, 688, 2562, 484, 86, 35, 13, 1006, 35, 123, 991, 261, 14, 36, 140, 24, 16, 1688, 7, 264, 911, 299, 812, 1154, 868, 160, 868, 531, 543, 507, 815, 119, 809, 991, 812, 812, 1959, 294, 806, 100, 85, 64, 204, 1276, 806, 335, 578, 167, 812, 47, 1154, 812)
+df <- data.frame(objs = data, relations = predicates_per_case)
+ggplot(data=df, aes(x=objs, y = relations)) + 
+  geom_point() +
+  geom_smooth(se = FALSE, method = "lm", formula =  y ~ poly(x, 2)) +
+  xlab("Objects per case") + 
+  ylab("Predicates per case")
+
 
