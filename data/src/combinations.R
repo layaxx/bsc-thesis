@@ -12,6 +12,8 @@ ggplot(data.frame(value = onecase_data), aes(x=value)) +
   ylab("number of configurations")+
   ggtitle("distribtion of score for one case on the situation from which it was generated")
 
+length(onecase_data[onecase_data >= 0.95]) 
+
 
 bin <- read.csv("binningresult.csv", header = FALSE)
 means_per_case <-sapply(bin, FUN = mean) 

@@ -10,19 +10,31 @@ This is especially important to determine the frequency with which \acs{CBR} cas
 
 \subsection{Settings \& Levels}\label{subsec:experimental-settings}
 To ensure comparability, settings must be the same between runs.
-The level set consists of 21 levels, that have been used in the past to evaluate domino strategies. On average, the levels consist of 40.6667 object.% per level or overall?
-% TODO: Which levels to evaluate?
-% - standard levels
-% - competition levels?
-% - levels that are hard to beat for current agents?
-% - a mix of the above?
+The level set consists of 21 levels, that have been used in the past to evaluate domino strategies. On average, the levels consist of 40.6667 entities (min: 12, max: 68, median: 36). An entity is an object than can be affected by a shot, e.g. a block of ice or a pig, but not a hill or a bird.
+
+The median level contains four pigs and four birds.
+
+The distribution of materials and shapes, which will become more important later, can be seen in figure % TODO: add figure
+the structure of the levels can be seen in the Appendix % TODO add screenshot of debug tool
+
+
+
+
+\subsection{Random Shots}
+% TODO: this
+The main idea behind incorporating CBR in AngryBirds is to save interesting shots for future use. Therefore shots that directly target pigs are of little interest and are not saved to the database.
+To increase the chance of finding unusual shots, the agent was modified to perform shots at random objects. For rectangular objects, the shots are aimed at either one, two or three thirds of the objects height.
+% TODO: add graph of long run shot distribution
+
+\subsection{Detection of shots and shot effects}
+% TODO:
 
 
 \subsection{Applicability of Cases}\label{subsec:experimental-applicability}
 As stated previously, the hardest part is determining whether a case is applicable to a given scenario.
 The main reason is the number of possible combinations of objects that could match, given that not all constraints have to be met for a case to be considered applicable.
 To further investigate this, the agent was run for 60 minutes in a create only mode, where it only performed random shots and generated cases for shots that killed one or more pigs but did not target them directly.
-
+% TODO: redo all this with new data
 This generated 60 cases and 1 Megabyte worth of Prolog rules. Each case is associated with a number of affected objects, on average 20 per case $k$ (min: 2, max: 55, median: 20.5).
 If no hard constraints are considered apart from the requirement that every object has to have a match, this means on average there are
 With an average of 40.6667 objects per level $n$ over the test set, this means that
@@ -34,6 +46,10 @@ As discussed previously, a possible mitigation is the introduction of additional
 This has the additional property of discarding entire cases, e.g. when a case requires ice objects but the level does not include any.
 This is helpful from a runtime optimization perspective but limits the generalizability of cases, as for some cases the actual material of some or all objects might not matter.
 How much this cuts down the number of possibilities is hard to calculate, since it depends on the distribution of object types in the levels and therefore cannot be averaged over the entire set as easily.
+Another way to reduce the number of allowed assignments is to require the target object to actually be hittable.
+Again, the numerical impact of this is highly situational, but it is worth to implement this either way:
+There is little use in finding an assignment with a high score if the target object cannot be hit due to obstacles.
+
 If one would calculate the number of possible assignments for a case over every level in the test set, take the mean of those values and then the median of the means for every case, this would work out to 3.58e+18. Again, a significant but insufficient improvement.
 A different, possibly more useful way to look at this would be the sum of configurations over all cases for a given level. This would give us an upper bound of configurations one had to check, if every case possible configuration for every case should be evaluated for a level. On average, this would work out to 4.81e+54 (min: 480 max: 9.83e+55 median: 4.53e+17).
 
@@ -41,7 +57,21 @@ In addition to the greatly increasing number of possible permutation, each objec
 Since for every object the position relative to every other object is stored, this causes a quadratic growth. Although the ERA has more predicates, this does not reflect here since the relation between two objects still consists of exactly one predicate on each axis.
 % TODO: quadratic?? add data
 
+In the implementation section, the first proposed mitigation to handle this complexity was a stochastic approach: Generate $n$ random assignments for each case and evaluate them. but how large would $n$ need to be for this to be useful?
+Lets look at an example: A case with manageable complexity, so that every combination can be generated and evaluated against the situation from which the case was generated shows: even when a perfect match is available, the probability of randomly finding a configuration which even satisfies half of predicates is 0.3371, dropping to 0.0047 if more than 75\% must be satisfied.
+% TODO: add graph here
+% TODO: add disclaimer about generalizabilkty
+
+
+
 % TODO: show curve of match score for levels where there is / is no 100% match available 
+
+\subsection{Predicates}
+To evaluate which set of predicates performs best, again a database of cases is generated by running the agent in create-only mode.
+For every case, enough information is saved such that Predicates can be generated after the agent finishes. For each set of Predicates, the corresponding Prolog rules can now be generated and the agent can be run in CBR-only mode. This means that the agent tries to find a matching CBR case from the database and executes the best available. If no case matches better then a threshold, the agent targets a pig directly. In this mode, no new cases are generated and cases are not updated, to limit randomness. Due to stochastic elements in the scene matching, which have been discussed earlier, randomness cannot be entirely avoided.
+
+Because the agent runs on the same database for every set of predicates, the results are comparable.
+% TODO: add results:
 
 \subsection{Caveats}\label{subsec:experimental-caveats}
 Potential problems to keep in mind: Level-selection is negligible when comparing two versions of the same agent that differ in strategies at hand or their implementation but not in the level selection process.
