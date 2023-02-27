@@ -9,6 +9,8 @@ This is supposed to enable determining the relevancy of relations between object
 
 The general flow of CBR will look like this: After a successful shot, a new case will be created or an existing one will be updated. When looking for shots to execute, the database of cases can be scanned for matching cases and a plan for a shot can be generated for every match.
 
+
+% TODO: Add algorithms somewhere here
 % What is a Case in the context of Angry Birds?
 
 \subsection{A case in AngryBirds}\label{subsec:impl-case}
@@ -81,6 +83,39 @@ One possibility would be generating a fixed amount of random configurations matc
 Another possibility is a local hill-climbing algorithm devised for Max-CSP Problems, called Minimum Conflict Heuristic (MCH)\cite{Minton1992MinimizingCA}. After generating a semi-random configuration, i.e. one matching the hard-constraints, a number of iterations is performed. In each step, a random variable that has conflicting relations is substituted with the object from the pool of valid objects, that minimizes conflicts. While not guaranteed to find a global maximum, this is expected to perform better than a completely random approach.
 While the original MCH algorithm chooses a variable in conflict with a uniform distribution, my implementation chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object the more predicates it violates.
 
+\begin{algorithm}
+    \caption{Adapted MCH algorithm}\label{alog:mch}
+    \begin{algorithmic}[1]
+        \Procedure{mch}{$caseID$}
+        \State $bestAssignment\gets randomAssignment(caseID)$
+        \State $bestScose \gets score(caseID, s)$
+        \While{\textbf{not} $terminate(s)$}
+        \State $s\gets mch\_step(s)$
+        \If{$score(caseID, s) > bestScore$}
+        \State $bestScore\gets score(caseID, s)$
+        \State $bestAssignment\gets s$
+        \EndIf
+        \EndWhile\label{euclidendwhile}
+        \State \textbf{return} $bestAssignment$\Comment{Best Found Assignment for given case}
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{Adapted mch\_step}\label{algo:mch_step}
+    \begin{algorithmic}[1]
+        \Procedure{mch\_step}{$caseID, assignment$}
+        \State $constraint \gets violated(caseID, assignment)$
+        \State $randomConstraint\gets random\_from\_set(constraints)$
+        \State $randomObject \gets random\_from\_constraint(randomConstraint)$
+        \State $bestObject \gets {x \in D(randomObject) \vert x maximises score}$
+        \State $assignment \gets replace(assignment, randomObject, bestObject)$
+        \State \textbf{return} $assignment$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
 A variation of MCH is WMCH, introducing a stochastic element once again: Each iteration has a chance to replace a conflicting object with a random eligible object instead of the one minimizing conflicts, thereby introducing a chance to escape local maxima.\cite{KapKis}
 
 The performance of all three algorithms, along with their parameters, is evaluated in the Evaluation section.
@@ -102,12 +137,15 @@ This approach is not perfect, but works reasonably well. Apart from more screens
 \paragraph{Relations for describing objects}
 Apart from the rather obvious properties of single objects, such as their general shape("rectangle", "circle", or "poly"), their material("ice", "wood", "stone", "tnt") and their rough dimensions, a key constraint for similarity of scenes is the relative position of objects to each other.
 
-There are different approaches with different levels of precision.
-The most precise description can be achieved using the Extended Rectangle Algebra introduced by Renz \cite{Renz-ERA}. Because it was intended for determining stability of structures, this provides very granular information about objects that are touching or overlapping.
-Whether this granularity is even useful in an environment where the computer vision introduces uncertainty will be shown in the evaluation section, where the ERA set of relations is compared to a two less complex sets.
+There are different approaches with different levels of precision. Four different ways are implemented and compared, see \ref{subsec:experimental-predicates}.
 
-A possible addition could consist of adding information whether object A is close enough to object B such that A could impact B when falling over, which would be encoded as before by ERA either way.
+The first three sets of predicates are similar to each other:
+The most precise description is achieved using the Extended Interval Algebra introduced by Renz \cite{Renz-ERA}. Because it was intended for determining stability of structures, this provides very granular information about objects that are touching or overlapping.
+Whether this granularity is even useful in an environment where the computer vision introduces uncertainty will be shown in the evaluation section.
 
+Similar but reduced sets of predicates are the Interval Algebra (IA) and Reduced Interval Algebra (RIA). While not technically subsets of EIA, they group several of the relations available in EIA.
+
+\include{includes/tables/relations.tex}
 
 Regardless of which relations are available, every pair of objects is described by exactly two relations, one for each axis. Some of these are redundant due to transitive properties.
 Consider a one dimensional example with objects a, b and c: if a is left of b and b is left of c, a must be left of c, thus it is not technically necessary to save the a left of c relation.
@@ -116,6 +154,15 @@ To make matching subsets of scenes easier, all relations are kept even if they a
 In contrast, inverse relations are not considered. If object a is before object b, then b is after a. Saving both would again be redundant, and because it does not simplify subset matching, inverses are discarded.
 
 One thing to keep in mind is that with a growing number of objects in a case, the importance of size and material predicates decrease relative to the positional predicates. Adding an object to a case that already has $n$ objects adds one size and one material predicate but $2*n$ positional predicates. This could be mitigated by adding weights to the predicates.
+
+While the Interval Algebras are very precise when objects touch or overlap, they provide little distinction for objects that are farther apart. It seems reasonable to differentiate between whether object A is close enough to object B such that A could impact B when falling over. Both situations would be encoded as before by RIA/IA/EIA either way, but are expected to have impact on the transferability of cases.
+A possible solution would be splitting the before predicate for those algebras into more granular relations.
+
+Another, fundamentally different way predicates could work is the Elevated Oriented Point Algebra (EOPRA), proposed by \cite{EOPRA-Perico2016CollaborativeCO}. Instead of relations for x and y axis, position between two objects is encoded as (relative, qualitive) distance and (qualitive) angle.
+
+% TODO add graphic 
+
+
 
 % How are cases generated?
 % How are effects determined?
