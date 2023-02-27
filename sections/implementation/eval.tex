@@ -1,0 +1,12 @@
+The planner reports the assignment and the id of the case back to the agent. The assignment information is used to transfer the expected effects to the current situation, since this information is stored with the ids of the original objects, which are highly likely not to be the same in a new  situation.
+Because the order is known, the old ids can be mapped to ids of the objects in the current situation with the assignment information.
+Now the expected effects of the shot are known, i.e. which objects are expected to move or be destroyed.
+Once the shot has been executed, the effect detection strategy described in \ref{subsec:impl-effects} is used to obtain the actual effects.
+At this point, the case can be refined using the information: If the effects match even though some relations were violated, those relations probably were not important to the applicability of the case and can thus be relaxed or even discarded.
+If the effects do not match and relations were violated, those probably are important to the applicability and a new case should be generated.
+
+If the effects do not match even though all relations matched, the relations were probably relaxed too much and either need to be tightened or the case should be penalized or removed. Penalization of cases could be achieved by associating cases with a confidence score which is increased/decreased after a successful/unsuccessful execution and favour cases with higher confidence scores.
+
+
+Further research could be conducted here. For example, whether observed and expected effects match depends on how they are used. In this implementation, it is sufficient if the case destroys the targets it promised to, regardless of what happened to other objects.
+If used in a more complex planning environment, where cases might also be used to clear a way for future shots, this might be insufficient. Whether a object that should have been destroyed but was moved or vice versa constitutes a match or a violation is also dependant on what purpose effects are used for.

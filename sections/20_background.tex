@@ -1,11 +1,15 @@
 \section{Background}\label{sec:background}
 
 \subsection{Case-Based Reasoning}
-Case-Bases Reasoning (CBR) is a method that dates back to the 1980s. It works similarly to how humans operate: Confronted with a novel situation, humans tend to think of similar situations they encountered in the past and try to adapt their previous solution to handle the new scene. % TODO: citation needed
+Case-Bases Reasoning (CBR) is a method that dates back to the 1980s. It works similarly to how humans operate: Confronted with a novel situation, humans tend to think of similar situations they encountered in the past and try to adapt their previous solution to handle the new scene. Cases do not always have to be positive, i.e. provide a path to success, they can also be used to avoid errors.\cite{Kolodner1992} For this paper, only positive instances of cases will be considered.
 
-One key advantage of CBR over approaches like Deep Learning is that not a lot of data or time needs to be spent on training. Since the agent generates cases from experiences, general knowledge of the the problem domain is not required.\cite{CBR-issues-variations-approaches}
+One key advantage of CBR over approaches like Deep Learning is that it requires less data and less time to be spent on training. Since the agent generates cases from its own experiences, general knowledge of the the problem domain is not required.\cite{CBR-issues-variations-approaches}
 
-Recently, CBR has been used in medical fields\cite{medical1, mediacl2} and robots\cite{QCBR}. % TODO: citation needed
+The core \ac{CBR} cycle consists of four steps: Case Retrieval, Adaptation, and Evaluation.\cite{Kolodner1992}
+Confronted with a situation that needs to be solved, a database of known cases is queried and the case that best matches the problem is retrieved. A case consists of at least a description of the situation in which it is applicable and a solution for the problem. Usually situations are similar but not identical, thus the solution may need to be adapted to fit the new situation. The adapted solution can then be executed and its effects can be used to evaluate and potentially update the case.
+
+
+Recently, CBR has been used in medical fields\cite{medical1, medical2} and robotics\cite{QCBR}, but also for language models \cite{text, text2}. % TODO: citation needed
 
 \subsection{Qualitative Representations and Reasoning}
 Unlike quantitative representations, qualitative representations try to abstract from actual values, thus increasing generalizability.
@@ -21,6 +25,10 @@ To do so, relevant information about the problem and the associated solution nee
 If two problems are similar enough, the solution can be transformed to solve the new problem.
 In out implementation, similarity between scenarios was judged quantitatively based on position and size of objects.
 
+\cite{QCBR} discusses a similar problem, applying a combination of \ac{CBR} and Reinforcement Learning to robotic soccer players.
+The qualitative spatial representation framework they use, \ac{EOPRA} is one of the options discussed in \ref{subsec:impl-relations}.
+
+
 
 \subsection{Goals \& Approaches}
 
@@ -31,8 +39,5 @@ For example, a few pixels could make the difference between an object being irre
 But due to thresholds we used in the quantitative approach, this distinction may not occur. % TODO: add image of a level where this could be an issue
 % TODO: Check wether this level could then be beaten using QualCBR
 
-The main objective will consist of comparing subsets of quantitative relations to find those that maximize the score the agent can achieve in-game. % TODO: what relations are available?
-% -> above, below, toTheLeft, toTheRight, touches, ...
-% -> how should empty space be represented (with predicates, as separate object, ...)
-
+The main objective will consist of comparing subsets of quantitative relations to find those that maximize the score the agent can achieve in-game as well as finding a suitable method for quantifiying scene similarity.
 

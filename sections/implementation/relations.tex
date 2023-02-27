@@ -1,0 +1,30 @@
+Apart from the rather obvious properties of single objects, such as their general shape ("rectangle", "circle", or "poly"), their material("ice", "wood", "stone" or "tnt") and their rough dimensions, a key constraint for similarity of scenes is the relative position of objects to each other.
+
+There are different approaches with different levels of precision. Four different ways are implemented and compared, see \ref{subsec:experimental-predicates}.
+
+The first three sets of predicates are similar to each other, based on Interval Algebra with different levels of precision:
+The most precise description is achieved using the Extended Interval Algebra introduced by Renz \cite{Renz-ERA}. Because it was intended for determining stability of structures, this provides very granular information about objects that are touching or overlapping.
+Whether this granularity is even useful in an environment where the computer vision introduces uncertainty will be shown in the evaluation section.
+
+Similar but reduced sets of predicates are the Interval Algebra (IA), originally introduced by \cite{Allen-10.1145/182.358434} and used for temporal representation, which was the basis for EIA, and the Reduced Interval Algebra (RIA), which groups even more relations. While not technically subsets of EIA, they group several of the relations available in EIA.
+
+\include{includes/tables/relations.tex}
+
+Regardless of which relations are available, they only describe the relation between two intervals. Because we are interested in two dimensional objects, those relations need to be computed for both the x and y axis. Every pair of objects is this described by exactly two relations, one for each axis. Some of these are redundant due to transitive properties.
+Consider a one dimensional example with objects a, b and c: if a is left of b and b is left of c, a must be left of c, thus it is not technically necessary to save the a left of c relation.
+To make matching subsets of scenes easier, all relations are kept, even if they are redundant. A subset of scenes in this case would be objects a and c, but not b.
+
+In contrast, inverse relations are not considered. If object a is before object b, then b is after a. Saving both would again be redundant, and because it does not simplify subset matching, inverses are discarded. This also needs to be consistent between the module generating the relations for a case and the module generating relations for a scene. The agent uses the same module for both tasks, therefor consistency is guaranteed.
+
+One thing to keep in mind is that with a growing number of objects in a case, the importance of size and material predicates decrease relative to the positional predicates. Adding an object to a case that already has $n$ objects adds one size and one material predicate but $2*n$ positional predicates. This could be mitigated by adding weights to the predicates.
+
+While the Interval Algebras are very precise when objects touch or overlap, they provide little distinction for objects that are farther apart. It seems reasonable to differentiate between whether object A is close enough to object B such that A could impact B when falling over. Both situations would be encoded as before by RIA/IA/EIA either way, but are expected to have impact on the transferability of cases.
+A possible solution would be splitting the before predicate for those algebras into more granular relations.
+
+Another, fundamentally different way predicates could work is the Elevated Oriented Point Algebra (EOPRA), proposed by \cite{EOPRA-Perico2016CollaborativeCO}. Instead of relations for x and y axis, position between two objects is encoded as (relative, qualitative) distance and (qualitative) angle.
+Figure \ref{fig:eopra} shows the zones around one object. While \ac{EOPRA} was originally designed to describe objects from a top down perspective, it also works with the side perspective of AngryBirds.
+Instead of front and back, the relations are now left, left-bottom, bottom, right-bottom, right, right-top, top and left-top.
+Distance is quantified according to euclidean distance between objects, with uniform thresholds between the seven zones. The largest threshold is about 200px, a value that was determined empirically. All objects farther away get the same distance predicate. Whether the center of or top-left corner is used for this calculation should not matter as long as it is done consistently.
+
+
+\asfigure{fig:eopra}{data/EOPRA}{The EOPRA Zones surrounding pig4, Screenshot from Debugging Tool}{15}

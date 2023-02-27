@@ -2,12 +2,14 @@ As stated previously, the hardest part is determining whether a case is applicab
 The main reason is the number of possible combinations of objects that could match, given that not all constraints have to be met for a case to be considered applicable.
 To further investigate this, the agent was run for 60 minutes in a create only mode, where it only performed random shots and generated cases for shots that killed one or more pigs but did not target them directly.
 % TODO: redo all this with new data
-This generated 60 cases and 1 Megabyte worth of Prolog rules. Each case is associated with a number of affected objects, on average 20 per case $k$ (min: 2, max: 55, median: 20.5).
+This generated 60 cases and 1 Megabyte worth of Prolog rules. Each case is associated with a number of affected objects, on average 20 per case $k$ (min: 2, max: 55, median: 20.5), see \ref{fig:objects-per-case}.
 If no hard constraints are considered apart from the requirement that every object has to have a match, this means on average there are
 With an average of 40.6667 objects per level $n$ over the test set, this means that
 8.10e+52 possible combinations ($k\sup{n}$) exist that would have to be checked for an average case in an average level.
 Additionally requiring all objects to be unique, i.e. one object in the level cannot be matched to multiple objects in the same case, reduces this number to
 5.25e+29 (binomial coefficient), which, although significantly less, is still far from being viable.
+
+\asfigure{fig:objects-per-case}{data/objects_per_case}{Distribution of objects per case}{10}
 
 As discussed previously, a possible mitigation is the introduction of additional hard constraints, such as requiring objects to have the same material and shape that they had in the original scenario.
 This has the additional property of discarding entire cases, e.g. when a case requires ice objects but the level does not include any.
@@ -22,13 +24,22 @@ A different, possibly more useful way to look at this would be the sum of config
 
 In addition to the greatly increasing number of possible permutation, each object also increases the cost of checking a configuration by adding relations.
 Since for every object the position relative to every other object is stored, this causes a quadratic growth. Although the ERA has more predicates, this does not reflect here since the relation between two objects still consists of exactly one predicate on each axis.
-% TODO: quadratic?? add data
+
+\asfigure{fig:predicates-by-objects}{data/predicates_by_objects}{Predicates per case and objects per case}{10}
 
 In the implementation section, the first proposed mitigation to handle this complexity was a stochastic approach: Generate $n$ random assignments for each case and evaluate them. but how large would $n$ need to be for this to be useful?
 Lets look at an example: A case with manageable complexity, so that every combination can be generated and evaluated against the situation from which the case was generated shows: even when a perfect match is available, the probability of randomly finding a configuration which even satisfies half of predicates is 0.3371, dropping to 0.0047 if more than 75\% must be satisfied.
-% TODO: add graph here
-% TODO: add disclaimer about generalizabilkty
 
+\asfigure{fig:one-case}{data/onecase_distribution}{}{10}
 
+The solution for this is a more directed approach, \ac{MCH} and \ac{WMCH}. To judge the improvement, again a database was generated.
+For each of the 21 levels, the best matching case was calculated with the random approach and both heuristic approaches. This was repeated for different amounts of iterations. One iteration of the random approach is not directly comparable to one iteration of \ac{MCH} or \ac{WMCH}, as those check multiple matches for one variable in each iteration.
+
+Indeed, the results show that the heuristic algorithms outperform the random approach on average score, but take longer for the same amount of iterations. Since their average score result does not keep increasing past 50 iterations, see \ref{fig:score-by-algo}, and the time to check all cases is manageable, see \ref{fig:time-by-algo}, \ac{WMCH} with 50 iterations is used for the other evaluations, unless otherwise specified.
+While not noticably outperforming \ac{MCH}, as can be seen in \ref{fig:algo-comparison} \ac{WMCH} achieves a good tradeoff between time and score.
+
+\asfigure{fig:score-by-algo}{data/score_by_algorithm}{Scores on all levels with n iterations}{15}
+\asfigure{fig:time-by-algo}{data/time_by_algorithm}{Time used to check all cases for n iterations}{15}
+\asfigure{fig:algo-comparison}{data/algo_comparison}{Score vs. Time used on all levels}{15}
 
 % TODO: show curve of match score for levels where there is / is no 100% match available 

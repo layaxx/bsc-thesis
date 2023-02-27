@@ -1,8 +1,0 @@
-Basis for this is a minimal implementation of an AIBirds Agent, that uses only the CBR strategy and performs a semi-random shot if no applicable case can be found.
-This will allow for easy comparison between CBR implementations without interference from previously devised strategies.
-The main goal here is to find a configuration, i.e. a subset of the qualitative predicates, for which the agent achieves the highest score on a set of AngryBirds levels.
-
-After performing a shot derived from a CBR strategy, the result will be used to refine the underlying case.
-This is supposed to enable determining the relevancy of relations between objects to replicability of cases.
-
-The general flow of CBR will look like this: After a successful shot, a new case will be created or an existing one will be updated. When looking for shots to execute, the database of cases can be scanned for matching cases and a plan for a shot can be generated for every match.

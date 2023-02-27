@@ -2,18 +2,16 @@
 library(ggplot2)
 
 setwd("C:\\Users\\layax\\Documents\\Uni\\s7_bachelorarbeit\\paper\\data\\src")
-matchScores <- read.csv("matchScores.csv", header=FALSE)
+matchScores <- read.csv("matchScores.csv", header=TRUE)
 
 
 View(matchScores)
 
 
-matchScores$time = unlist(map(matchScores$V6, function (x) strsplit(x, "cpu:")[[1]][[2]]))
-
 
 library(purrr)
 
-length(matchScores[matchScores$V1 == "mch",]$V5)
+mean(matchScores[matchScores$algorithm == "random",]$score)
 
 
 matchScores[matchScores$V1 == "random",]
@@ -27,8 +25,6 @@ strsplit(matchScores$V6[[1]], ":")[[1]][[2]]
 # score on y, iterations on x
 # min max median score
 
+ggplot(matchScores, aes(x= time, y= score, color = algorithm)) + geom_point()  +facet_grid(cols = vars(level))
 
-
-
-
-ggplot(matchScores, aes(x= V3, y=time, color = V1)) + geom_point()
+ggplot(matchScores, aes(y= score, color = algorithm)) + geom_boxplot() +facet_grid(cols = vars(iterations))
