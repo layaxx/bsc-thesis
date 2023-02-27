@@ -70,7 +70,7 @@
 		\centering
 		\begin{minipage}[t]{16cm}
 			\begin{minipage}{3cm}
-				\includegraphics[height=26mm]{includes/vs-logo}
+				\includegraphics[height=26mm]{includes/logoBird}
 			\end{minipage}
 			\hfill
 			\begin{minipage}{9cm}
@@ -158,13 +158,13 @@
 %
 % Einbindung eines Bildes
 % #1 = label für \ref-Verweise
-% #2 = Name des Bildes ohne Endung relativ zu images-Verzeichnis
+% #2 = Name des Bildes ohne Endung 
 % #3 = Beschriftung
 % #4 = Breite des Bildes im Dokument in cm
 \newcommand{\asfigure}[4]{%
 	\begin{figure}[htb]%
 		\begin{center}%
-			\includegraphics[width=#4cm]{images/#2}%
+			\includegraphics[width=#4cm]{#2}%
 			\vskip -0.3cm%
 			\caption{#3}%
 			\vskip -0,2cm%
@@ -176,12 +176,12 @@
 % Umgebung für Fliesstext um Grafik
 % #1 = Ausrichtung: r, l, i, ...
 % #2 = Breite des Bildes in cm
-% #3 = Name des Bildes ohne Endung relativ zu images-Verzeichnis
+% #3 = Name des Bildes ohne Endung
 % #4 = Beschriftung
 % #5 = label für \ref-Verweise
 \newcommand{\textflow}[5]{%
 	\begin{wrapfigure}{#1}{#2cm}%
-		\includegraphics[width=#2cm]{images/#3}%
+		\includegraphics[width=#2cm]{#3}%
 		\caption{#4}%
 		\label{#5}%
 	\end{wrapfigure}%

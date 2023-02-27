@@ -1,0 +1,68 @@
+The original idea for matching cases was to add a prolog rule for every new case, consisting of a set of required predicates and a set of optional predicates.
+This rule would generate configurations of objects matching every required predicate for a given case and then check the ratio of optional predicates that hold for this configuration.
+This is necessary because we don't only want perfect matches, but close matches as well which can be used to update and generalize cases.
+
+This is therefore an instance of a more general Constraint Satisfaction Problem (Max CSP). which is known to be NP hard.
+
+Thus efficiently implementing this part is a major challenge:
+Configurations cannot be discarded as soon as the first relation fails to hold.
+Even if the only required predicates are the actual objects, i.e. every object must have a counterpart in the scene but all additional information, such as materials, shape and position are optional, the number of possible permutations that have to be checked are too high to be efficiently checked.
+
+Unfortunately, runtime performance is actually important here. While case generation and updating can easily be background tasks that are run separately from the actual agent, the detection of applicable strategies needs to happen in real time.
+In order to maximize the amount of time spent performing shots, and thus potentially solving levels and increasing score, the strategy generation needs to be as fast as possible.
+
+% TODO: add more data here as well
+A possible mitigation could be including more information about the objects as required predicates instead of optionals.
+The most obvious candidates for this would be shape and material.
+% TODO: how much improvement in expectation?
+The drawback is that cases cannot be generalized over those attributes anymore. While for some cases the material of a block might be important, especially when the goal lies in breaking a block, for other cases the material might not matter.
+With this approach, this will not be detected, however, since the case will never match to other materials und thus cannot be updated.
+
+Another way to decrease the number of possible permutations would be decreasing the number of objects associated with a case. Along with an expected decrease in the accuracy of the system, this approach would probably decrease the value for complex planning, as per the definition every object associated with the case is expected to be affected by the shot und thus should be considered during planning.
+Determining which objects to omit would also be non-trivial.
+
+When implemented in Prolog, there is an issue with its backtracking search: Consider a case with 10 objects: If, for a given configuration of 10 matched objects, none of the optional predicates match, exchanging one of the 10 matched objects cannot possible meaningfully change the result
+% TODO: add more data here i guess
+Instead, a randomized approach could be helpful, where the entire configuration is discarded when the percentage of matching optional predicate is below a threshold and a completely new configuration is chosen.
+
+One possibility would be generating a fixed amount of random configurations matching the hard constraints for each case, checking the soft constraints for each configuration.
+
+Another possibility is a local hill-climbing algorithm devised for Max-CSP Problems, called Minimum Conflict Heuristic (MCH)\cite{Minton1992MinimizingCA}. After generating a semi-random configuration, i.e. one matching the hard-constraints, a number of iterations is performed. In each step, a random variable that has conflicting relations is substituted with the object from the pool of valid objects, that minimizes conflicts. While not guaranteed to find a global maximum, this is expected to perform better than a completely random approach.
+While the original MCH algorithm chooses a variable in conflict with a uniform distribution, my implementation chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object the more predicates it violates.
+
+\begin{algorithm}
+    \caption{Adapted MCH algorithm}\label{alog:mch}
+    \begin{algorithmic}[1]
+        \Procedure{mch}{$caseID$}
+        \State $bestAssignment\gets randomAssignment(caseID)$
+        \State $bestScose \gets score(caseID, s)$
+        \While{\textbf{not} $terminate(s)$}
+        \State $s\gets mch\_step(s)$
+        \If{$score(caseID, s) > bestScore$}
+        \State $bestScore\gets score(caseID, s)$
+        \State $bestAssignment\gets s$
+        \EndIf
+        \EndWhile\label{euclidendwhile}
+        \State \textbf{return} $bestAssignment$\Comment{Best Found Assignment for given case}
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{Adapted mch\_step}\label{algo:mch_step}
+    \begin{algorithmic}[1]
+        \Procedure{mch\_step}{$caseID, assignment$}
+        \State $constraint \gets violated(caseID, assignment)$
+        \State $randomConstraint\gets random\_from\_set(constraints)$
+        \State $randomObject \gets random\_from\_constraint(randomConstraint)$
+        \State $bestObject \gets {x \in D(randomObject) \vert x maximises score}$
+        \State $assignment \gets replace(assignment, randomObject, bestObject)$
+        \State \textbf{return} $assignment$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+A variation of MCH is WMCH, introducing a stochastic element once again: Each iteration has a chance to replace a conflicting object with a random eligible object instead of the one minimizing conflicts, thereby introducing a chance to escape local maxima.\cite{KapKis}
+
+The performance of all three algorithms, along with their parameters, is evaluated in the Evaluation section.

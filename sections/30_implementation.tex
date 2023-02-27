@@ -1,166 +1,18 @@
 \section{Implementation}\label{sec:implementation}
-
-Basis for this is a minimal implementation of an AIBirds Agent, that uses only the CBR strategy and performs a semi-random shot if no applicable case can be found.
-This will allow for easy comparison between CBR implementations without interference from previously devised strategies.
-The main goal here is to find a configuration, i.e. a subset of the qualitative predicates, for which the agent achieves the highest score on a set of AngryBirds levels.
-
-After performing a shot derived from a CBR strategy, the result will be used to refine the underlying case.
-This is supposed to enable determining the relevancy of relations between objects to replicability of cases.
-
-The general flow of CBR will look like this: After a successful shot, a new case will be created or an existing one will be updated. When looking for shots to execute, the database of cases can be scanned for matching cases and a plan for a shot can be generated for every match.
-
-
-% TODO: Add algorithms somewhere here
-% What is a Case in the context of Angry Birds?
+\input{sections/implemenation/intro.tex}
 
 \subsection{A case in AngryBirds}\label{subsec:impl-case}
-What does a case in the context of AngryBirds consist of? There are three essential parts: A description of the situation in which this case is valid, a description of the shot and a description of the effects we expect this shot to have in this situation.
-
-\paragraph{The situation}
-A description of the situation is necessary for the planner cato determine whether a given scenario is sufficiently similar for the case to provide meaningful input.
-For the qualitative CBR, this description consists of a every object that had been affected by the original shot and a set of relations, that provide more information about the qualities of those objects and their relative positions.
-
-
-\paragraph{The shot}
-For the quantitative CBR we had used the target coordinates of the original shot, which were then transformed to a matched scenario.
-Because this transformation of coordinates will not happen during the qualitative CBR process, a shot is instead represented by the object the original shot had targeted.
-A drawback of this approach is the inability to represent complex shots not directly targeting one object.
-Examples of such complex shots would be rebound shots.
-Additional information is added however, as along with the target object, qualitative predicates about the shot are saved. These include classification of the trajectory (high vs low shots) and where the target was (supposed to be) hit, i.e. whether the target was above, below or at the center of the target object.
-The latter can only be estimated, however. Due to technical restrictions we can record where the agent was trying to hit the object, but not where the shot actually hit.
-
-
-\paragraph{The Effects}
-There are two main use cases for the expected effects a shot might have. The first is in the planning phase, where these might be used to determine whether this shot will improve the situation at hand, thus enabling complex planning processes for multiple shots in a row.
-After executing a shot, the expected effects can be compared to the observed effects. If the effects match even though the situation was not a perfect match, this can be used to update the case in order to loosen restrictions on the situation.
-For example, if a case with large wooden objects has the same effects when the wooden objects are small, the restriction on size could either be removed entirely or could be loosened to either small or big, leaving medium objects out until they have been observed to work as well.
-If the match was not perfect and the observed effects were different from expectations, a new case can be generated.
-
-If, on the other hand, the situation did match well but the observed effects were notably different from expectation, the case restrictions could either be made more strict, or the entire case could be discarded.
-
-Another option would be to associate cases with a confidence value which is increased once a case is successfully applied and decreased on failure.
-
-
-% TODO: What then??
-
-\paragraph{When should a new case be added?}
-This question goes back to an entirely different, not yet solved problem: Determining how good a shot was.
-This is nontrivial, as a shot might not kill a target but still improve the overall situation by removing obstacles and enabling better shots at remaining targets.
-A shot that takes out a target might also not be a very good shot if it leads to other targets becoming obstructed and harder to hit.
-Because classifying the quality of a shot is out of scope for this paper, we are gonna assume that shots are good iff they kill one or more targets.
-When the agent has executed a shot that meets this criterion, on of two things can happen: The shot was already based on a CBR shot, then the underlying case can be updated based on the observed effects. Otherwise, the a new case is generated using this shot and its effects.
+\input{sections/implemenation/case.tex}
 
 \paragraph{Determining conditions for applicability of a case}
-The original idea for matching cases was to add a prolog rule for every new case, consisting of a set of required predicates and a set of optional predicates.
-This rule would generate configurations of objects matching every required predicate for a given case and then check the ratio of optional predicates that hold for this configuration.
-This is necessary because we don't only want perfect matches, but close matches as well which can be used to update and generalize cases.
-
-This is therefore an instance of a more general Constraint Satisfaction Problem (Max CSP). which is known to be NP hard.
-
-Thus efficiently implementing this part is a major challenge:
-Configurations cannot be discarded as soon as the first relation fails to hold.
-Even if the only required predicates are the actual objects, i.e. every object must have a counterpart in the scene but all additional information, such as materials, shape and position are optional, the number of possible permutations that have to be checked are too high to be efficiently checked.
-
-Unfortunately, runtime performance is actually important here. While case generation and updating can easily be background tasks that are run separately from the actual agent, the detection of applicable strategies needs to happen in real time.
-In order to maximize the amount of time spent performing shots, and thus potentially solving levels and increasing score, the strategy generation needs to be as fast as possible.
-
-% TODO: add more data here as well
-A possible mitigation could be including more information about the objects as required predicates instead of optionals.
-The most obvious candidates for this would be shape and material.
-% TODO: how much improvement in expectation?
-The drawback is that cases cannot be generalized over those attributes anymore. While for some cases the material of a block might be important, especially when the goal lies in breaking a block, for other cases the material might not matter.
-With this approach, this will not be detected, however, since the case will never match to other materials und thus cannot be updated.
-
-Another way to decrease the number of possible permutations would be decreasing the number of objects associated with a case. Along with an expected decrease in the accuracy of the system, this approach would probably decrease the value for complex planning, as per the definition every object associated with the case is expected to be affected by the shot und thus should be considered during planning.
-Determining which objects to omit would also be non-trivial.
-
-When implemented in Prolog, there is an issue with its backtracking search: Consider a case with 10 objects: If, for a given configuration of 10 matched objects, none of the optional predicates match, exchanging one of the 10 matched objects cannot possible meaningfully change the result
-% TODO: add more data here i guess
-Instead, a randomized approach could be helpful, where the entire configuration is discarded when the percentage of matching optional predicate is below a threshold and a completely new configuration is chosen.
-
-One possibility would be generating a fixed amount of random configurations matching the hard constraints for each case, checking the soft constraints for each configuration.
-
-Another possibility is a local hill-climbing algorithm devised for Max-CSP Problems, called Minimum Conflict Heuristic (MCH)\cite{Minton1992MinimizingCA}. After generating a semi-random configuration, i.e. one matching the hard-constraints, a number of iterations is performed. In each step, a random variable that has conflicting relations is substituted with the object from the pool of valid objects, that minimizes conflicts. While not guaranteed to find a global maximum, this is expected to perform better than a completely random approach.
-While the original MCH algorithm chooses a variable in conflict with a uniform distribution, my implementation chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object the more predicates it violates.
-
-\begin{algorithm}
-    \caption{Adapted MCH algorithm}\label{alog:mch}
-    \begin{algorithmic}[1]
-        \Procedure{mch}{$caseID$}
-        \State $bestAssignment\gets randomAssignment(caseID)$
-        \State $bestScose \gets score(caseID, s)$
-        \While{\textbf{not} $terminate(s)$}
-        \State $s\gets mch\_step(s)$
-        \If{$score(caseID, s) > bestScore$}
-        \State $bestScore\gets score(caseID, s)$
-        \State $bestAssignment\gets s$
-        \EndIf
-        \EndWhile\label{euclidendwhile}
-        \State \textbf{return} $bestAssignment$\Comment{Best Found Assignment for given case}
-        \EndProcedure
-    \end{algorithmic}
-\end{algorithm}
-
-
-\begin{algorithm}
-    \caption{Adapted mch\_step}\label{algo:mch_step}
-    \begin{algorithmic}[1]
-        \Procedure{mch\_step}{$caseID, assignment$}
-        \State $constraint \gets violated(caseID, assignment)$
-        \State $randomConstraint\gets random\_from\_set(constraints)$
-        \State $randomObject \gets random\_from\_constraint(randomConstraint)$
-        \State $bestObject \gets {x \in D(randomObject) \vert x maximises score}$
-        \State $assignment \gets replace(assignment, randomObject, bestObject)$
-        \State \textbf{return} $assignment$
-        \EndProcedure
-    \end{algorithmic}
-\end{algorithm}
-
-A variation of MCH is WMCH, introducing a stochastic element once again: Each iteration has a chance to replace a conflicting object with a random eligible object instead of the one minimizing conflicts, thereby introducing a chance to escape local maxima.\cite{KapKis}
-
-The performance of all three algorithms, along with their parameters, is evaluated in the Evaluation section.
+\input{sections/implemenation/applicability.tex}
 
 \paragraph{Determining effects of a shot}
-Objects affected by a shot were either destroyed or moved. Determining what object were affected is simple, the harder part is distinguishing between moved and destroyed objects. This is, at least in part, due to the limited information the agent has: one screenshot before and one after the shot was executed and objects have stopped moving and no consistent ids that would allow matching objects between the two.
-
-After making use of the computer vision module, we have two sets of objects, $before$ and $after$. Every object that appears in both sets with same shape, same material and similar coordinates can be eliminated  from both sets, as by definition it has not been affected by the shot. Due to uncertainty added by the computer vision module, coordinates do not have to be the exact same, but can deviate by 5 pixels and still be considered unchanged. In theory, objects could have been moved but ended up in the same place, but this cannot be detected without additional information.
-
-Having identified affected objects, the harder part is finding out which where destroyed and which have moved. The two sets $before$ and $after$ now contain only objects that have been affected.
-For every object $x$ of $before$ a list of potential matches is compiled. A potential match is an object $y$ of $after$, which has the same shape, material and a similar area (again, due to uncertainty). The coordinates are not considered at this point, however they must be different as otherwise the object would have been removed earlier.
-If no matching object for $x$ is found, it must have been destroyed and can be removed from $before$. Otherwise, $x$ is added to a list of associated objects for every $y$.
-
-The remaining objects of $before$ are not yet classified however. Even though every object has at least one potential match, there could be multiple objects in $before$ that match (only) the same object from $after$. In this case, only one of them could have moved, the others must have been destroyed. Thus, if an object $y$ from $after$ has multiple possible matches from $before$, it is assumed that the physically closest matching object in $before$ has moved and both objects can be removed from the sets. At this point, if there are remaining objects in $before$, they must have been destroyed.
-
-This approach is not perfect, but works reasonably well. Apart from more screenshots, which could be used to track objects, future iterations could consider whether physical simulations or heuristics could be used to further improve this part. A possible heuristic could be that objects are likely to move to the right when hit from the left, although this might not be true when slopes come into play or when structures collapse.
-
+\input{sections/implemenation/effect-detection.tex}
 
 \paragraph{Relations for describing objects}
-Apart from the rather obvious properties of single objects, such as their general shape("rectangle", "circle", or "poly"), their material("ice", "wood", "stone", "tnt") and their rough dimensions, a key constraint for similarity of scenes is the relative position of objects to each other.
-
-There are different approaches with different levels of precision. Four different ways are implemented and compared, see \ref{subsec:experimental-predicates}.
-
-The first three sets of predicates are similar to each other:
-The most precise description is achieved using the Extended Interval Algebra introduced by Renz \cite{Renz-ERA}. Because it was intended for determining stability of structures, this provides very granular information about objects that are touching or overlapping.
-Whether this granularity is even useful in an environment where the computer vision introduces uncertainty will be shown in the evaluation section.
-
-Similar but reduced sets of predicates are the Interval Algebra (IA) and Reduced Interval Algebra (RIA). While not technically subsets of EIA, they group several of the relations available in EIA.
-
-\include{includes/tables/relations.tex}
-
-Regardless of which relations are available, every pair of objects is described by exactly two relations, one for each axis. Some of these are redundant due to transitive properties.
-Consider a one dimensional example with objects a, b and c: if a is left of b and b is left of c, a must be left of c, thus it is not technically necessary to save the a left of c relation.
-To make matching subsets of scenes easier, all relations are kept even if they are redundant. A subset of scenes in this case would be objects a and c, but not b.
-
-In contrast, inverse relations are not considered. If object a is before object b, then b is after a. Saving both would again be redundant, and because it does not simplify subset matching, inverses are discarded.
-
-One thing to keep in mind is that with a growing number of objects in a case, the importance of size and material predicates decrease relative to the positional predicates. Adding an object to a case that already has $n$ objects adds one size and one material predicate but $2*n$ positional predicates. This could be mitigated by adding weights to the predicates.
-
-While the Interval Algebras are very precise when objects touch or overlap, they provide little distinction for objects that are farther apart. It seems reasonable to differentiate between whether object A is close enough to object B such that A could impact B when falling over. Both situations would be encoded as before by RIA/IA/EIA either way, but are expected to have impact on the transferability of cases.
-A possible solution would be splitting the before predicate for those algebras into more granular relations.
-
-Another, fundamentally different way predicates could work is the Elevated Oriented Point Algebra (EOPRA), proposed by \cite{EOPRA-Perico2016CollaborativeCO}. Instead of relations for x and y axis, position between two objects is encoded as (relative, qualitive) distance and (qualitive) angle.
-
-% TODO add graphic 
+\input{sections/implemenation/relations.tex}
+% TODO: add graphic 
 
 
 

@@ -1,96 +1,36 @@
 \section{Experimental Evaluation}\label{sec:experimental}
-To evaluate the performance and capability of the devised algorithm, as well as compare different implementations and sets of predicates against each other, the agent can be run on a set of levels.
-A script then logs relevant information, such that runs with different agent versions can be compared.
-The most important metric to be logged is which levels the agent is capable of beating at all and the highest achieved score per level.
-Other metrics include which strategies where used for each shot.
-This is especially important to determine the frequency with which \acs{CBR} cases are found to be applicable and the success rate of adaptation.
-
-All evaluations were performed on a system with 16GB of RAM and a 2.6 Ghz hexa-core CPU.
-
-Some of the components are tested in isolation, while some tests were run with a a combination of modules. Details are explained below.
+\input{sections/evaluation/intro.tex}
 % TODO: Look at how/if performance (both time and score maybe) changes with time/amount of levels played 
 
 
 \subsection{Settings \& Levels}\label{subsec:experimental-settings}
-To ensure comparability, settings must be the same between runs.
-The level set consists of 21 levels, that have been used in the past to evaluate domino strategies. On average, the levels consist of 40.6667 entities (min: 12, max: 68, median: 36). An entity is an object than can be affected by a shot, e.g. a block of ice or a pig, but not a hill or a bird.
-
-The median level contains four pigs and four birds.
-
-The distribution of materials and shapes, which will become more important later, can be seen in figure % TODO: add figure
-the structure of the levels can be seen in the Appendix % TODO add screenshot of debug tool
+\input{sections/evaluation/setup.tex}
 
 
 
 
 \subsection{Random Shots}\label{subsec:experimental-random-shots}
-% TODO: this
-The main idea behind incorporating CBR in AngryBirds is to save interesting shots for future use. Therefore shots that directly target pigs are of little interest and are not saved to the database.
-To increase the chance of finding unusual shots, the agent was modified to perform shots at random objects. For rectangular objects, the shots are aimed at either one, two or three thirds of the objects height.
-% TODO: add graph of long run shot distribution
+\input{sections/evaluation/random-shots.tex}
 
 \subsection{Detection of shots and shot effects}
-% TODO:
+% TODO: this
 
 
 \subsection{Applicability of Cases}\label{subsec:experimental-applicability}
-As stated previously, the hardest part is determining whether a case is applicable to a given scenario.
-The main reason is the number of possible combinations of objects that could match, given that not all constraints have to be met for a case to be considered applicable.
-To further investigate this, the agent was run for 60 minutes in a create only mode, where it only performed random shots and generated cases for shots that killed one or more pigs but did not target them directly.
-% TODO: redo all this with new data
-This generated 60 cases and 1 Megabyte worth of Prolog rules. Each case is associated with a number of affected objects, on average 20 per case $k$ (min: 2, max: 55, median: 20.5).
-If no hard constraints are considered apart from the requirement that every object has to have a match, this means on average there are
-With an average of 40.6667 objects per level $n$ over the test set, this means that
-8.10e+52 possible combinations ($k\sup{n}$) exist that would have to be checked for an average case in an average level.
-Additionally requiring all objects to be unique, i.e. one object in the level cannot be matched to multiple objects in the same case, reduces this number to
-5.25e+29 (binomial coefficient), which, although significantly less, is still far from being viable.
+\input{sections/evaluation/applicability.tex}
 
-As discussed previously, a possible mitigation is the introduction of additional hard constraints, such as requiring objects to have the same material and shape that they had in the original scenario.
-This has the additional property of discarding entire cases, e.g. when a case requires ice objects but the level does not include any.
-This is helpful from a runtime optimization perspective but limits the generalizability of cases, as for some cases the actual material of some or all objects might not matter.
-How much this cuts down the number of possibilities is hard to calculate, since it depends on the distribution of object types in the levels and therefore cannot be averaged over the entire set as easily.
-Another way to reduce the number of allowed assignments is to require the target object to actually be hittable.
-Again, the numerical impact of this is highly situational, but it is worth to implement this either way:
-There is little use in finding an assignment with a high score if the target object cannot be hit due to obstacles.
-
-If one would calculate the number of possible assignments for a case over every level in the test set, take the mean of those values and then the median of the means for every case, this would work out to 3.58e+18. Again, a significant but insufficient improvement.
-A different, possibly more useful way to look at this would be the sum of configurations over all cases for a given level. This would give us an upper bound of configurations one had to check, if every case possible configuration for every case should be evaluated for a level. On average, this would work out to 4.81e+54 (min: 480 max: 9.83e+55 median: 4.53e+17).
-
-In addition to the greatly increasing number of possible permutation, each object also increases the cost of checking a configuration by adding relations.
-Since for every object the position relative to every other object is stored, this causes a quadratic growth. Although the ERA has more predicates, this does not reflect here since the relation between two objects still consists of exactly one predicate on each axis.
-% TODO: quadratic?? add data
-
-In the implementation section, the first proposed mitigation to handle this complexity was a stochastic approach: Generate $n$ random assignments for each case and evaluate them. but how large would $n$ need to be for this to be useful?
-Lets look at an example: A case with manageable complexity, so that every combination can be generated and evaluated against the situation from which the case was generated shows: even when a perfect match is available, the probability of randomly finding a configuration which even satisfies half of predicates is 0.3371, dropping to 0.0047 if more than 75\% must be satisfied.
-% TODO: add graph here
-% TODO: add disclaimer about generalizabilkty
-
-
-
-% TODO: show curve of match score for levels where there is / is no 100% match available 
-
-\subsection{Predicates}\label{subsec:experimental-predicates}
-To evaluate which set of predicates performs best, again a database of cases is generated by running the agent in create-only mode.
-For every case, enough information is saved such that Predicates can be generated after the agent finishes. For each set of Predicates, the corresponding Prolog rules can now be generated and the agent can be run in CBR-only mode. This means that the agent tries to find a matching CBR case from the database and executes the best available. If no case matches better then a threshold, the agent targets a pig directly. In this mode, no new cases are generated and cases are not updated, to limit randomness. Due to stochastic elements in the scene matching, which have been discussed earlier, randomness cannot be entirely avoided.
-
-Because the agent runs on the same database for every set of predicates, the results are comparable. For each set of predicates, the appropriate case database was generated and the agent was run for 60 minutes. The Level selection module was set to first iteratively play every level before any levels can be attempted again.
-This also improves comparability between runs. Applicability of cases was determined with 50 iterations of the wmch algorithm.
-
-During the runs, every action the agent performs is logged, so that the run can be analyzed afterwards. Relevant data includes the strategies that were considered and which strategy was chosen for each shot, the results of a shot, expected and actual effects for CBR shots and the score if a level is beaten.
-
-This information allows the run to be reconstructed and analyzed at any time.
-
-For this purpose, performance of a case is judged by whether it killed the pigs it promised to, regardless of other objects that should have been affected.
-% TODO: add results:
+\subsection{Relations}\label{subsec:experimental-predicates}
+\input{sections/evaluation/relations.tex}
 
 \subsection{Caveats}\label{subsec:experimental-caveats}
 %
 
 %
-\input{sections/42_results.tex}
-%
-\subsection{Insights}\label{subsec:experimental-insights}
-\input{sections/43_discussion.tex}
+\subsection{Results}\label{subsec:experimental-results}
+\input{sections/evaluation/results.tex}
+
+\subsection{Discussion}\label{subsec:experimental-discussion}
+\input{sections/evaluation/discussion.tex}
 
 
 % TODO: Evaluation for effect detection, case updating

@@ -1,0 +1,35 @@
+What does a case in the context of AngryBirds consist of? There are three essential parts: A description of the situation in which this case is valid, a description of the shot and a description of the effects we expect this shot to have in this situation.
+
+\paragraph{The situation}
+A description of the situation is necessary for the planner cato determine whether a given scenario is sufficiently similar for the case to provide meaningful input.
+For the qualitative CBR, this description consists of a every object that had been affected by the original shot and a set of relations, that provide more information about the qualities of those objects and their relative positions.
+
+
+\paragraph{The shot}
+For the quantitative CBR we had used the target coordinates of the original shot, which were then transformed to a matched scenario.
+Because this transformation of coordinates will not happen during the qualitative CBR process, a shot is instead represented by the object the original shot had targeted.
+A drawback of this approach is the inability to represent complex shots not directly targeting one object.
+Examples of such complex shots would be rebound shots.
+Additional information is added however, as along with the target object, qualitative predicates about the shot are saved. These include classification of the trajectory (high vs low shots) and where the target was (supposed to be) hit, i.e. whether the target was above, below or at the center of the target object.
+The latter can only be estimated, however. Due to technical restrictions we can record where the agent was trying to hit the object, but not where the shot actually hit.
+
+
+\paragraph{The Effects}
+There are two main use cases for the expected effects a shot might have. The first is in the planning phase, where these might be used to determine whether this shot will improve the situation at hand, thus enabling complex planning processes for multiple shots in a row.
+After executing a shot, the expected effects can be compared to the observed effects. If the effects match even though the situation was not a perfect match, this can be used to update the case in order to loosen restrictions on the situation.
+For example, if a case with large wooden objects has the same effects when the wooden objects are small, the restriction on size could either be removed entirely or could be loosened to either small or big, leaving medium objects out until they have been observed to work as well.
+If the match was not perfect and the observed effects were different from expectations, a new case can be generated.
+
+If, on the other hand, the situation did match well but the observed effects were notably different from expectation, the case restrictions could either be made more strict, or the entire case could be discarded.
+
+Another option would be to associate cases with a confidence value which is increased once a case is successfully applied and decreased on failure.
+
+
+% TODO: What then??
+
+\paragraph{When should a new case be added?}
+This question goes back to an entirely different, not yet solved problem: Determining how good a shot was.
+This is nontrivial, as a shot might not kill a target but still improve the overall situation by removing obstacles and enabling better shots at remaining targets.
+A shot that takes out a target might also not be a very good shot if it leads to other targets becoming obstructed and harder to hit.
+Because classifying the quality of a shot is out of scope for this paper, we are gonna assume that shots are good iff they kill one or more targets.
+When the agent has executed a shot that meets this criterion, on of two things can happen: The shot was already based on a CBR shot, then the underlying case can be updated based on the observed effects. Otherwise, the a new case is generated using this shot and its effects.
