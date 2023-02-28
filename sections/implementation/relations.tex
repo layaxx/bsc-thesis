@@ -3,10 +3,10 @@ Apart from the rather obvious properties of single objects, such as their genera
 There are different approaches with different levels of precision. Four different ways are implemented and compared, see \ref{subsec:experimental-predicates}.
 
 The first three sets of predicates are similar to each other, based on Interval Algebra with different levels of precision:
-The most precise description is achieved using the Extended Interval Algebra introduced by Renz \cite{Renz-ERA}. Because it was intended for determining stability of structures, this provides very granular information about objects that are touching or overlapping.
+The most precise description is achieved using the \ac{EIA} introduced by Renz \cite{Renz-ERA}. Because it was intended for determining stability of structures, this provides very granular information about objects that are touching or overlapping.
 Whether this granularity is even useful in an environment where the computer vision introduces uncertainty will be shown in the evaluation section.
 
-Similar but reduced sets of predicates are the Interval Algebra (IA), originally introduced by \cite{Allen-10.1145/182.358434} and used for temporal representation, which was the basis for EIA, and the Reduced Interval Algebra (RIA), which groups even more relations. While not technically subsets of EIA, they group several of the relations available in EIA.
+Similar but reduced sets of predicates are the \ac{IA}, originally introduced by \cite{Allen-10.1145/182.358434} and used for temporal representation, which was the basis for \ac{EIA}, and the \ac{RIA}, which groups even more relations. While not technically subsets of EIA, they group several of the relations available in EIA.
 
 \include{includes/tables/relations.tex}
 
@@ -21,7 +21,7 @@ One thing to keep in mind is that with a growing number of objects in a case, th
 While the Interval Algebras are very precise when objects touch or overlap, they provide little distinction for objects that are farther apart. It seems reasonable to differentiate between whether object A is close enough to object B such that A could impact B when falling over. Both situations would be encoded as before by RIA/IA/EIA either way, but are expected to have impact on the transferability of cases.
 A possible solution would be splitting the before predicate for those algebras into more granular relations.
 
-Another, fundamentally different way predicates could work is the Elevated Oriented Point Algebra (EOPRA), proposed by \cite{EOPRA-Perico2016CollaborativeCO}. Instead of relations for x and y axis, position between two objects is encoded as (relative, qualitative) distance and (qualitative) angle.
+Another, fundamentally different way predicates could work is the \ac{EOPRA}, proposed by \cite{EOPRA-Perico2016CollaborativeCO}. Instead of relations for x and y axis, position between two objects is encoded as (relative, qualitative) distance and (qualitative) angle.
 Figure \ref{fig:eopra} shows the zones around one object. While \ac{EOPRA} was originally designed to describe objects from a top down perspective, it also works with the side perspective of AngryBirds.
 Instead of front and back, the relations are now left, left-bottom, bottom, right-bottom, right, right-top, top and left-top.
 Distance is quantified according to euclidean distance between objects, with uniform thresholds between the seven zones. The largest threshold is about 200px, a value that was determined empirically. All objects farther away get the same distance predicate. Whether the center of or top-left corner is used for this calculation should not matter as long as it is done consistently.

@@ -25,12 +25,12 @@ A different, possibly more useful way to look at this would be the sum of config
 In addition to the greatly increasing number of possible permutation, each object also increases the cost of checking a configuration by adding relations.
 Since for every object the position relative to every other object is stored, this causes a quadratic growth. Although the ERA has more predicates, this does not reflect here since the relation between two objects still consists of exactly one predicate on each axis.
 
-\asfigure{fig:predicates-by-objects}{data/predicates_by_objects}{Predicates per case and objects per case}{10}
+\asfigure{fig:predicates-by-objects}{data/predicates_by_objects}{Predicates per case and objects per case}{7}
 
 In the implementation section, the first proposed mitigation to handle this complexity was a stochastic approach: Generate $n$ random assignments for each case and evaluate them. but how large would $n$ need to be for this to be useful?
 Lets look at an example: A case with manageable complexity, so that every combination can be generated and evaluated against the situation from which the case was generated shows: even when a perfect match is available, the probability of randomly finding a configuration which even satisfies half of predicates is 0.3371, dropping to 0.0047 if more than 75\% must be satisfied.
 
-\asfigure{fig:one-case}{data/onecase_distribution}{}{10}
+\asfigure{fig:one-case}{data/onecase_distribution}{Distribution of score for a case on a scene with a perfect match available}{7}
 
 The solution for this is a more directed approach, \ac{MCH} and \ac{WMCH}. To judge the improvement, again a database was generated.
 For each of the 21 levels, the best matching case was calculated with the random approach and both heuristic approaches. This was repeated for different amounts of iterations. One iteration of the random approach is not directly comparable to one iteration of \ac{MCH} or \ac{WMCH}, as those check multiple matches for one variable in each iteration.

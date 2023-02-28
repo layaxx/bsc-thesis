@@ -27,4 +27,4 @@ strsplit(matchScores$V6[[1]], ":")[[1]][[2]]
 
 ggplot(matchScores, aes(x= time, y= score, color = algorithm)) + geom_point()  +facet_grid(cols = vars(level))
 
-ggplot(matchScores, aes(y= score, color = algorithm)) + geom_boxplot() +facet_grid(cols = vars(iterations))
+ggplot(matchScores, aes(y= time, color = algorithm)) + geom_boxplot() +facet_grid(cols = vars(iterations))
