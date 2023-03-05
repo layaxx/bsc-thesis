@@ -1,7 +1,7 @@
-The results show that the approach is viable, but no clear best set of predicates stands out. While the coarse set of \ac{RIA} relations achieved highest scores, more granular sets like \ac{EOPRA} show higher success rates when cases are applied, see \ref{fig:eval-success}
+The results show that the approach is viable, but no clear best set of predicates stands out. While the coarse set of \ac{RIA} relations achieved highest scores, more granular sets like \ac{EOPRA} show higher success rates when cases are applied, see Figure \ref{fig:eval-success}
 
 
-In general, variance in performance between all relation sets is pretty low. By the relevant metrics, i.e. sum of scores and average score per cleared level,  \ac{IA} performed best and \ac{IASplit} worst, see \ref{fig:eval-scores-no-zero}.
+In general, variance in performance between all relation sets is low. By the relevant metrics, i.e. sum of scores and average score per cleared level, \ac{RIA} performed best and \ac{IASplit} worst, see \ref{fig:eval-scores-no-zero}.
 
 Scores per level do also not show any set of relations outperforming every other. While for some levels, \ac{IA} performed best, on others it failed to beat the level or achieved a low score. The highest achieved score on a single level has been with \ac{IASplit}, which scored comparatively little on most other levels, see \ref{fig:eval-all}.
 
@@ -9,4 +9,4 @@ All \ac{CBR} strategies outperform the baseline of randomShot and most performed
 The lower performance of randomShot compared to targetPig is expected, as it has a lower chance of hitting pigs, due to targeting other objects as well, thereby decreasing the chance of clearing a level and also decreasing the score on a cleared level on expectation, because more shots lead to a lower score.
 
 
-The additional time spent searching for CBR cases compared to the quick planning of the simple agents does not degrade performance be too badly with the implemented method. While each of the agents with \ac{CBR} performed an average of 158.57 shots during the 60 minutes of evaluation, the average number of shots taken by the two baseline agents was 175.5.
+The additional time spent searching for CBR cases compared to the quick planning of the simple agents does not significantly degrade performance with the implemented method. While each of the agents with \ac{CBR} performed an average of 158.57 shots during the 60 minutes of evaluation, the average number of shots taken by the two baseline agents was 175.5.

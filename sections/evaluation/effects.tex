@@ -1,11 +1,12 @@
 Because effects might be used for evaluating and updating cases, differentiating between moved and destroyed objects is important here.
 As discussed in \ref{subsec:impl-effects}, recognizing affected objects in general is straight forward and works very well unless objects are not or not correctly identified by the vision module, which sometimes happens, especially if a shot leaves debris.
 
-The focus lies on separating moved from destroyed objects, which had been implemented in the previous quantitative \ac{CBR} already, but only in a way that the count of destroyed and moved objects matched, not necessarily the mapping to actual objects.
+The focus lies on separating moved from destroyed objects.
+A version of this had been implemented in the quantitative \ac{CBR} strategy described in \ref{par:quantititve-cbr} already and was improved for this paper.
 
-The methods described in \ref{subsec:impl-effects}, notably using distance to match objects, improved accuracy. \ref{fig:effects} shows a before and after situation where three identical wooden objects were affected, one was destroyed and two were moved.
+The methods described in \ref{subsec:impl-effects}, notably using distance to match objects, improves accuracy. Figure \ref{fig:effects} shows a before and after situation where three identical wooden objects were affected, one was destroyed and two were moved.
 To the human eye, it is rather obvious that the left-most wooden tile was destroyed, while the other two just fell down, which is also correct because it was directly hit by a bird which caused the others to topple over.
 While the previous version correctly identified affected objects as well as count of moved and destroyed objects, it did not assign the correct status to each affected object.
-The right-most panel of \ref{fig:effects} shows that the improved version correctly identifies every element. The classification results were layered on top of the before image, objects that were determined to have moved are filled with yellow color while objects that were destroyed are filled with red.
+The right-most panel of \ref{fig:effects} shows that the improved version correctly identifies every element. The classification results are layered on top of the before image, objects that were determined to have moved are filled with yellow color while objects that were destroyed are filled with red.
 
-\asfigure{fig:effects}{data/classification}{before / after / classification}{15}
+\asfigure{fig:effects}{data/classification}{before / after / classification; a shot at the left-most wooden object was performed, destrying it and three pigs. Two identical wooden objects were moved but not destroyed. Red objects were classified as destroyed, yellow objects as moved, all others as unaffected.}{15}

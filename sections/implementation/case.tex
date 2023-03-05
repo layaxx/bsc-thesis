@@ -6,7 +6,7 @@ For the qualitative CBR, this description consists of a every object that had be
 
 
 \paragraph{The shot}
-For the quantitative CBR we had used the target coordinates of the original shot, which were then transformed to a matched scenario.
+For the quantitative CBR, described in \ref{par:quantititve-cbr}, we had used the target coordinates of the original shot, which were then transformed to a matched scenario.
 Because this transformation of coordinates will not happen during the qualitative CBR process, a shot is instead represented by the object the original shot had targeted.
 A drawback of this approach is the inability to represent complex shots not directly targeting one object.
 Examples of such complex shots would be rebound shots.
@@ -29,7 +29,9 @@ Another option would be to associate cases with a confidence value which is incr
 
 \paragraph{When should a new case be added?}
 This question goes back to an entirely different, not yet solved problem: Determining how good a shot was.
-This is nontrivial, as a shot might not kill a target but still improve the overall situation by removing obstacles and enabling better shots at remaining targets.
+This is nontrivial, as a shot might not destroy a target but still improve the overall situation by removing obstacles and enabling better shots at remaining targets.
 A shot that takes out a target might also not be a very good shot if it leads to other targets becoming obstructed and harder to hit.
-Because classifying the quality of a shot is out of scope for this paper, we are gonna assume that shots are good iff they kill one or more targets.
+Because classifying the quality of a shot is out of scope for this paper, we are assume that shots are good if they destroy at least one target.
 When the agent has executed a shot that meets this criterion, on of two things can happen: The shot was already based on a CBR shot, then the underlying case can be updated based on the observed effects. Otherwise, the a new case is generated using this shot and its effects.
+
+To avoid trivial shots, such as direct hits at a pig, which might only affect this one object and thus match every situation, shots are only added to the database if the target object is not a pig.

@@ -1,8 +1,14 @@
-Objects affected by a shot were either destroyed or moved. Determining what object were affected is simple, the harder part is distinguishing between moved and destroyed objects. This is, at least in part, due to the limited information the agent has: one screenshot before and one after the shot was executed and objects have stopped moving and no consistent ids that would allow matching objects between the two.
+Objects are classified as either affected or unaffected by a shot.
+If an object was neither destroyed nor moved by a shot, it is considered unaffected.
+All other objects are therefore affected and are further classified as being either destroyed or moved.
 
-After making use of the computer vision module, we have two sets of objects, $before$ and $after$. Every object that appears in both sets with same shape, same material and similar coordinates can be eliminated  from both sets, as by definition it has not been affected by the shot. Due to uncertainty added by the computer vision module, coordinates do not have to be the exact same, but can deviate by 5 pixels and still be considered unchanged. In theory, objects could have been moved but ended up in the same place, but this cannot be detected without additional information.
+Determining which object were unaffected is simple, because by definition they both still exists and are at the same position as before the execution of the shot. The harder part is dividing all other objects into either moved or destroyed objects.
+This is, at least in part, due to the limited information the agent has: one screenshot before and one after the shot was executed and objects have stopped moving and no consistent ids that would allow matching objects between the two.
 
-Having identified affected objects, the harder part is finding out which where destroyed and which have moved. The two sets $before$ and $after$ now contain only objects that have been affected.
+After making use of the computer vision module, we have two sets of objects, $before$ and $after$. Every object that appears in both sets with same shape, same material and similar coordinates can be eliminated from both sets, as by definition it has not been affected by the shot.
+Due to uncertainty added by the computer vision module, coordinates do not have to be the exact same, but can deviate by 5 pixels and still be considered unchanged. In theory, objects could have been moved but ended up in the same place, but this cannot be detected without additional information.
+
+The two sets $before$ and $after$ now contain only objects that have been affected.
 For every object $x$ of $before$ a list of potential matches is compiled. A potential match is an object $y$ of $after$, which has the same shape, material and a similar area (again, due to uncertainty). The coordinates are not considered at this point, however they must be different as otherwise the object would have been removed earlier.
 If no matching object for $x$ is found, it must have been destroyed and can be removed from $before$. Otherwise, $x$ is added to a list of associated objects for every $y$.
 

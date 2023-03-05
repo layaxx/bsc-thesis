@@ -1,9 +1,9 @@
-\section{Outlook}\label{sec:outlook}
+\section{Summary and Outlook}\label{sec:outlook}
 This paper documents the implementation of a quantitative \ac{CBR} approach to beat AngryBirds. Different methods for comparing similarity between and describing scenes have been compared, showing a (slight) improvement over baseline performance.
-Possible future improvements could be made in the scene matching algorithm, which does not always find an optimal solution.
-A possible addition could be a similarity metric which takes into account similarity of violated constraints, instead of the binary approach presented here.
 
-\cite{QCBR} uses an algorithm that does a similar thing for \ac{EOPRA}, where distance between relations is considered. For example, if two objects should have the relation (close, top-left) but instead have (medium, top-left), this would be a better match than (far, right). With the presented approach, both are counted as violation with equal weight.
+Possible future improvements could be made in the scene matching algorithm, which does not always find an optimal solution.
+One addition could be a similarity metric, which takes into account how much constraints are violated, instead of the binary approach presented here.
+\cite{QCBR} uses such a metric for \ac{EOPRA}. For example, if two objects should have the relation (close, top-left) but instead have (medium, top-left), this would be a better match than (far, right). With the presented approach, both are counted as violation with equal weight.
 
 One of the promises of the \ac{CBR} approach is the prediction of effects on a scene it provides, which could in the future be integrated into a more complex planning system that uses this information to plan ahead several shots.
 This would require a more complex assessment of shots as well, such that shots may be included that do not directly kill targets but improve the  layout of the level for future shots.

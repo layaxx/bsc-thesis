@@ -5,7 +5,7 @@ Once the shot has been executed, the effect detection strategy described in \ref
 At this point, the case can be refined using the information: If the effects match even though some relations were violated, those relations probably were not important to the applicability of the case and can thus be relaxed or even discarded.
 If the effects do not match and relations were violated, those probably are important to the applicability and a new case should be generated.
 
-If the effects do not match even though all relations matched, the relations were probably relaxed too much and either need to be tightened or the case should be penalized or removed. Penalization of cases could be achieved by associating cases with a confidence score which is increased/decreased after a successful/unsuccessful execution and favour cases with higher confidence scores.
+If the effects do not match even though all relations matched, the relations were presumably relaxed too much and either the relations need to be tightened or the case needs to be penalized or removed. Penalization of cases could be achieved by associating cases with a confidence score which is increased/decreased after a successful/unsuccessful execution and favour cases with higher confidence scores.
 
 
 Further research could be conducted here. For example, whether observed and expected effects match depends on how they are used. In this implementation, it is sufficient if the case destroys the targets it promised to, regardless of what happened to other objects.
