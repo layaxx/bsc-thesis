@@ -7,6 +7,25 @@ eval <- jsonify::from_json( "eval_data.json" )
 
 View(eval)
 
+
+pre_strats <- jsonify::from_json( "strategies.json" , fill_na = T, simplify = T)
+
+ggplot(pre_strats, aes(x= type, fill = strategy)) + geom_bar()
+
+aggregate(pre_strats[pre_strats$type == "executed",], FUN = length, by = list(pre_strats[pre_strats$type == "executed",]$strategy))
+aggregate(pre_strats[pre_strats$type == "candidate",], FUN = length, by = list(pre_strats[pre_strats$type == "candidate",]$strategy))
+
+tbl <- table( pre_strats$strategy, pre_strats$type )
+
+ tbl[,2]  / length(pre_strats$type[pre_strats$type == "executed"])
+
+ 
+
+ 
+View(pre_strats)
+
+length(pre_strats$type == "candidate")
+
 strats <- jsonify::from_json( "eval_strats.json" , fill_na = T, simplify = T)
 
 View(strats)

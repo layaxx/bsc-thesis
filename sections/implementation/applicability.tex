@@ -5,7 +5,7 @@ This is necessary because we are not only interested in perfect matches. Instead
 
 This can be seen as instance of a more general Constraint Satisfaction Problem (Max CSP), which is known to be NP hard. For a given case there are $n$ variables, where $n$ is the number of objects affected by the case. The domain for each variable is a subset of all objects in the current level. The goal is to find an assignment (or configuration) of variables, such that no two variables are assigned the same object and that as many relations as possible are satisfied.
 
-Thus efficiently implementing this part is a major challenge:
+Thus, implementing this to find a solution quickly is a major challenge:
 Configurations cannot be discarded as soon as the first relation fails to hold.
 Even if the only required predicates are the actual objects, i.e. every object must have a counterpart in the scene but all additional information, such as materials, shape and position are optional, the number of possible permutations that have to be checked are too high to be efficiently checked.
 
@@ -22,8 +22,10 @@ Another way to decrease the number of possible permutations would be to associat
 Determining which objects to omit would also be non-trivial.
 
 When implemented in Prolog, there is an issue with its backtracking search: Consider a case with 10 objects: If, for a given configuration of 10 matched objects, none of the optional predicates match, exchanging one of the 10 matched objects cannot possibly meaningfully change the result.
+Because every object only occurs in $1/n$ of predicates, even if this replacement satisfies every relation the new object is a part of, the new configuration still only satisfies $1/10$ of predicates.
 
 A simple way to lower the number of assignments that are checked could be a randomized approach: generating a fixed amount of random configurations matching the hard constraints for each case and checking the soft constraints for each configuration to find the one that matches best.
+At this point, there obviously is no guarantee to find a good match even if a perfect match exists.
 
 Another possibility is a local hill-climbing algorithm devised for Max-CSP problems, called Minimum Conflict Heuristic (MCH)\cite{Minton1992MinimizingCA}. After generating a semi-random configuration, i.e. one matching the hard-constraints, a number of iterations is performed. In each step, a random variable that has conflicting relations is substituted with the object from its domain that minimizes conflicts. While not guaranteed to find a global maximum, this is expected to perform better than a completely random approach.
 While the original MCH algorithm chooses a variable in conflict with a uniform distribution, the implementation used here chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object with the more predicates it violates. The algorithms are described in \ref{alog:mch} and \ref{algo:mch_step}.
@@ -53,9 +55,9 @@ The $terminate$ function limits the algorithm to a maximum number of iterations,
     \begin{algorithmic}[1]
         \Procedure{mch\_step}{$caseID, assignment$}
         \State $constraint \gets violated(caseID, assignment)$
-        \State $randomConstraint\gets random\_from\_set(constraints)$
+        \State $randomConstraint\gets random\_member(constraints)$
         \State $randomObject \gets random\_from\_constraint(randomConstraint)$
-        \State $bestObject \gets {x \in D(randomObject) \vert x maximises score}$
+        \State $bestObject \gets random\_member(\{x \in D(randomObject) \vert x maximises score\})$
         \State $assignment \gets replace(assignment, randomObject, bestObject)$
         \State \textbf{return} $assignment$
         \EndProcedure

@@ -1,9 +1,3 @@
-To evaluate the performance and capability of the devised algorithm, as well as compare different implementations and sets of predicates against each other, the agent can be run on a set of levels.
-A script then logs relevant information, such that runs with different agent versions can be compared.
-The most important metric to be logged is which levels the agent is capable of beating at all and the highest achieved score per level.
-Other metrics include which strategies where used for each shot.
-This is especially important to determine the frequency with which \acs{CBR} cases are found to be applicable and the success rate of adaptation.
+In this section, the implemented modules are evaluated. The case matching algorithms are compared with respect to their time efficiency and the quality of matches found.
+The effect detection component is tested in isolation and the sets of relations are evaluated based on score the agent can achieve with them as well as success rate of applied cases.
 
-All evaluations were performed on a Linux system with 16GB of RAM and a 2.6 Ghz hexa-core CPU. Runtime Environments are Java 17.0.5 and SWI-Prolog version 8.4.1. 
-
-Some of the components are tested in isolation, while some tests were run with a a combination of modules. Details are explained below.

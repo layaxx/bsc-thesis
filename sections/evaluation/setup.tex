@@ -1,4 +1,13 @@
-To ensure comparability, settings must be the same between runs.
+The exact experimental setup depends on the component under test and is described in more detail in the relevant sections.
+
+In general, a version of the agent runs on a set of levels, which is detailed below.
+A script then logs relevant information during runs, such that they can be analyzed and compared afterwards.
+The most important metric to be logged is which levels the agent is capable of beating at all and the highest achieved score per level.
+Other data includes which strategies where used for each shot and the effects of \ac{CBR} shots.
+This is especially important to determine the frequency with which \acs{CBR} cases are found to be applicable and the success rate of adaptation.
+
+All evaluations were performed on a Linux system (OpenSUSE Tumbleweed) with 16GB of RAM and a 2.6 Ghz hexa-core CPU. Relevant runtime environments are Java 17.0.5 and SWI-Prolog version 8.4.1.
+
 The level set consists of 21 levels, that have been used in the past to evaluate domino strategies. They have been selected for the evaluation set because they include some instances of similar object configurations in different levels while still being diverse.
 On average, the levels consist of 40.67 entities (min: 12, max: 68, median: 36). An entity is an object than can be affected by a shot, e.g. a block of ice or a pig, but not a hill or a bird.
 
