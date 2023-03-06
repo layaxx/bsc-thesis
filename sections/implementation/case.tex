@@ -41,3 +41,40 @@ Because classifying the quality of a shot is out of scope for this paper, we are
 When the agent has executed a shot that meets this criterion, on of two things can happen: The shot was already based on a CBR shot, then the underlying case can be updated based on the observed effects. Otherwise, the a new case is generated using this shot and its effects.
 
 To avoid trivial shots, such as direct hits at a pig, which might only affect this one object and thus match every situation, shots are only added to the database if the target object is not a pig.
+
+\begin{lstlisting}[caption=case information outside of Prolog]
+{
+  "targetID": "ice8",
+  "birdType": "RedBird",
+  "effects": {
+    "movedIDs": ["ice28"],
+    "destroyedIDs": ["ice7", "pig1", "ice8"]
+  },
+  "shotType": "MEDIUM",
+  "optionalPredicates": [
+    { "predicateName": "hasForm", "args": ["Ice8", "bar"] },
+    //...
+  ],
+  "caseIndex": 5
+}    
+\end{lstlisting}
+
+\begin{lstlisting}[label=lst:case-prolog, language=Prolog, caption=case information in Prolog]
+case(cbr_5, [medium, center]).
+testAssignment(cbr_5,[Ice8, Ice28, Ice7, Pig1],Conflicts, Score):-
+    hittable(_,Ice8),
+    find_conflicts([before(Ice28,Pig1,yAxis),hasForm(Ice7,block), //...
+        ], Conflicts),
+    length(Conflicts, CL),
+    Score is 1 -(CL / 24).
+randomAssignment(cbr_5, [Ice8, Ice28, Ice7, Pig1]):-
+    findall(ID,object(ID,rect,ice),Icerect),
+    random_permutation(Icerect, TargetIcerect),
+    member(Ice8, TargetIcerect),
+    hittable(_, Ice8),
+    delete(TargetIcerect,Ice8, WithoutTarget),
+    [Ice28,Ice7|_] = WithoutTarget,
+    findall(ID,object(ID,ball,pork),Porkball),
+    random_permutation([Pig1|_],Porkball),
+true.
+\end{lstlisting}

@@ -12,6 +12,8 @@ ggplot(distances ,aes(x = distance)) +
   geom_histogram(aes(y = stat(density)),binwidth = 10  ) + 
   geom_vline(xintercept =  median(distances$distance))
 
+median(distances$distance)
+
 
 min(distances$distance)
 

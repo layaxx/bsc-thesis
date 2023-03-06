@@ -1,5 +1,28 @@
 The planner reports the assignment and the id of the case back to the agent. The assignment information is used to transfer the expected effects to the current situation, since this information is stored with the ids of the original objects, which are highly likely not to be the same in a new  situation.
-Because the order is known, the old ids can be mapped to ids of the objects in the current situation with the assignment information.
+Because the order is known, the old ids can be mapped to ids of the objects in the current situation with the assignment information. As demonstrated in section \ref{lst:case-prolog}, the assignment in Prolog happens as a List.
+When the original list of affected IDs can then be used with the newly obtained list of object ids in the current scene to replace the original ids in the effects with the new ids, thus translating them and obtaining expected effects on the new objects, as can be seen in listing \ref{lst:map}
+
+\begin{lstlisting}[label=lst:map, caption=case information outside of Prolog]
+// original case with old IDs
+{
+  "effects": {
+    "movedIDs": ["wood0", "wood7", "ice8", "ice1"],
+    "destroyedIDs": ["ice10", "pig0"]
+  },
+}
+// original order => [wood0, wood7, ice8, ice1, ice10, pig0]
+// assignment:
+["wood5", "wood18", "ice1", "ice2", "ice5", "pig2"]
+// expected effects:
+{
+  "effects": {
+    "movedIDs": ["wood5", "wood18", "ice1", "ice2"],
+    "destroyedIDs": ["ice5", "pig2"]
+  },
+}
+\end{lstlisting}
+
+
 Now the expected effects of the shot are known, i.e. which objects are expected to move or be destroyed.
 Once the shot has been executed, the effect detection strategy described in \ref{subsec:impl-effects} is used to obtain the actual effects.
 At this point, the case can be refined using the information: If the effects match even though some relations were violated, those relations probably were not important to the applicability of the case and can thus be relaxed or even discarded.

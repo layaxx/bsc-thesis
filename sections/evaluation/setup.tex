@@ -6,6 +6,8 @@ The most important metric to be logged is which levels the agent is capable of b
 Other data includes which strategies where used for each shot and the effects of \ac{CBR} shots.
 This is especially important to determine the frequency with which \acs{CBR} cases are found to be applicable and the success rate of adaptation.
 
+Some of the evaluations are performed on a database of cases. Unless otherwise mentioned, these are built by running a modified version of the agent, which performs shots derived from the ``randomShot'' strategy derived earlier. If a shot destroys a pig without targeting it directly, the effects are analyzed and the appropriate Prolog rules are generated and saved.
+
 All evaluations were performed on a Linux system (OpenSUSE Tumbleweed) with 16GB of RAM and a 2.6 Ghz hexa-core CPU. Relevant runtime environments are Java 17.0.5 and SWI-Prolog version 8.4.1.
 
 The level set consists of 21 levels, that have been used in the past to evaluate domino strategies. They have been selected for the evaluation set because they include some instances of similar object configurations in different levels while still being diverse.
