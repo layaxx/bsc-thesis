@@ -7,6 +7,14 @@ A version of this had been implemented in the quantitative \ac{CBR} strategy des
 The methods described in \ref{subsec:impl-effects}, notably using distance to match objects, improves accuracy. Figure \ref{fig:effects} shows a before and after situation where three identical wooden objects were affected, one was destroyed and two were moved.
 To the human eye, it is rather obvious that the left-most wooden tile was destroyed, while the other two just fell down, which is also correct because it was directly hit by a bird which caused the others to topple over.
 While the previous version correctly identified affected objects as well as count of moved and destroyed objects, it did not assign the correct status to each affected object.
-The right-most panel of \ref{fig:effects} shows that the improved version correctly identifies every element. The classification results are layered on top of the before image, objects that were determined to have moved are filled with yellow color while objects that were destroyed are filled with red.
+
+The right-most panel of \ref{fig:effects} shows that the improved version correctly identifies every element on this scene.
+The classification results are layered on top of the before image, objects that were determined to have moved are filled with yellow color while objects that were destroyed are filled with red.
+
+In general the effect detection achieves good results. When objects are misclassified, they are usually labeled as destroyed instead of moved. Those misclassifications are generally caused by the object detection in the vision module instead of the effects classification algorithm.
+For example, the object detection has a hard time determining the boundaries of close-by ice blocks. If a block is damaged by a shot but not destroyed, this also causes the object to sometimes be misclassified as destroyed.
+
+There are two main failure modes: misclassification due to incorrect object detection, (usually an object that moved is incorrectly classified as destroyed), misclassification due to incomplete information (e.g. a block was hit and moved to a position where an identical block was before).
+% FIXME: add image here
 
 \asfigure{fig:effects}{data/classification}{before / after / classification; a shot at the left-most wooden object was performed, destrying it and three pigs. Two identical wooden objects were moved but not destroyed. Red objects were classified as destroyed, yellow objects as moved, all others as unaffected.}{15}

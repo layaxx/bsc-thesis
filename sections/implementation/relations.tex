@@ -1,16 +1,16 @@
 Apart from the rather obvious properties of single objects, such as their general shape (``rectangle'', ``circle'', or ``poly''), their material(``ice'', ``wood'', ``stone'' or ``tnt'') and their rough dimensions, a key constraint for similarity of scenes is the relative position of objects to each other.
 
-There are different approaches with different levels of precision. Four different ways are implemented and compared, see \ref{subsec:experimental-predicates}.
+There are different algebras that can be used to represent the position of two-dimensional shapes. In this paper, four approaches are implemented and compared, see \ref{subsec:experimental-predicates}.
 
-The first three sets of predicates are similar to each other, based on Interval Algebra with different levels of precision:
-The most precise description is achieved using the \ac{EIA} introduced by Renz \cite{Renz-ERA}. Because it was intended for determining stability of structures, this provides very granular information about objects that are touching or overlapping.
+Because most objects in AngryBirds are rectangles or can be represented by minimal bounding rectangles without losing much information, the first three sets of predicates are based on Rectangle Algebra, a two-dimensional extension of Interval Algebra \cite{Balbiani1999ANT}. The three differ in the level of precision they offer:
+The most precise description is achieved using the \ac{EIA}, which was introduced by Renz to reason about the stability of structures in AngryBirds \cite{Renz-ERA}. Because of this original use case, \ac{EIA} provides very granular information about objects that are touching or overlapping.
 Whether this granularity is even useful in an environment where the computer vision introduces uncertainty will be shown in the evaluation section.
 
 Similar but reduced sets of predicates are the \ac{IA}, originally introduced by \cite{Allen-10.1145/182.358434} and used for temporal representation, which was the basis for \ac{EIA}, and the \ac{RIA}, which groups even more relations. While not technically subsets of EIA, they group several of the relations available in EIA.
 
 \include{includes/tables/relations.tex}
 
-Regardless of which relations are available, they only describe the relation between two intervals. Because we are interested in two dimensional objects, those relations need to be computed for both the x and y axis. Every pair of objects is this described by exactly two relations, one for each axis. Some of these are redundant due to transitive properties.
+Regardless of which relations are available, they only describe the relation between two intervals. Because we are interested in two dimensional objects, those relations need to be computed for both the x and y axis. Every pair of objects is thus described by exactly two relations, one for each axis. Some of these are redundant due to transitive properties.
 Consider a one dimensional example with objects a, b and c: if a is left of b and b is left of c, a must be left of c, thus it is not technically necessary to save the a left of c relation.
 To make matching subsets of scenes easier, all relations are kept, even if they are redundant. A subset of scenes in this case would be objects a and c, but not b.
 
@@ -24,7 +24,9 @@ A possible solution would be splitting the before predicate for those algebras i
 Another, fundamentally different way predicates could work is the \ac{EOPRA}, proposed by \cite{EOPRA-Perico2016CollaborativeCO}. Instead of relations for x and y axis, position between two objects is encoded as (relative, qualitative) distance and (qualitative) angle.
 Figure \ref{fig:eopra} shows the zones around one object. While \ac{EOPRA} was originally designed to describe objects from a top down perspective, it also works with the side perspective of AngryBirds.
 Instead of front and back, the relations are now left, left-bottom, bottom, right-bottom, right, right-top, top and left-top.
-Distance is quantified according to euclidean distance between objects, with uniform thresholds between the seven zones. The largest threshold is about 200px, a value that was determined empirically. All objects farther away get the same distance predicate. Whether the center of or top-left corner is used for this calculation should not matter as long as it is done consistently.
+Distance is quantified according to euclidean distance between objects, with uniform thresholds between the seven zones. The largest threshold is about 200px, a value that was determined empirically by calculating distances between objects in the level. The threshold was chosen as a compromise between coverage of objects and granularity.
+All objects farther away get assigned the same distance predicate. Whether the center or top-left corner of an object is used for this calculation should not matter as long as it is done consistently.
 
+\asfigure{fig:distances}{data/distance_in_levels}{Frequency of distance between objects in the level set, with median at 211}{10}
 
 \asfigure{fig:eopra}{data/EOPRA}{The EOPRA Zones surrounding pig4, Screenshot from Debugging Tool}{15}
