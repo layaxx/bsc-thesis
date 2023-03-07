@@ -10,23 +10,17 @@ Creating an agent capable of doing this is the main goal of AIBIRDS, a yearly co
 To do so, relevant information about the problem and the associated solution need to be stored and similarity between problems must be judged.
 If two problems are similar enough, the solution can be transformed to solve the new problem.
 
-One key advantage of \ac{CBR} over approaches like Deep Learning is that it requires less data and less time to be spent on training. Since the agent generates cases from its own experiences, general knowledge of the the problem domain is not required.\cite{CBR-issues-variations-approaches}
-
-This paper describes the implementation and evaluation of a qualitative case-based reasoning strategy for such an agent, with the goal of providing alternatives to current strategies and potentially improve scoring performance.
+One advantage \ac{CBR} has over other AI paradigms like Deep Learning is that it requires less data and is more explainable \cite{explainable-https://doi.org/10.48550/arxiv.1710.04806}. Since the agent generates cases from its own experiences, general knowledge of the the problem domain is not required \cite{CBR-issues-variations-approaches}.
 
 
-\subsection{Previous Work}
-\paragraph{Quantitive Case-Based reasoning}\label{par:quantititve-cbr}
+\subsection{Previous Work}\label{subsec:previous}
 In previous work, we devised a strategy to use case-based reasoning to allow the agent to remember good shots und use them again in similar scenarios, even though the strategy that originally produced this shot may not have a high priority.
 A case in this context consisted of a set of affected objects (see \ref{subsec:impl-effects}) and the coordinates of the point at which the bird was aimed.
 
 A case was applicable to a given scene if a translation exists, such that for every object associated with a case, the scene has an object of the same material and area at the translated coordinates. A translation consists of a shift along the x-axis, a shift along the y-axis as well as a scaling factor.
 
-
 \cite{QCBR} discusses a similar problem, applying a combination of \ac{CBR} and Reinforcement Learning to robotic soccer players.
 The qualitative spatial representation framework they use, \ac{EOPRA} is one of the candidates analyzed in \ref{subsec:impl-relations}.
-
-
 
 \subsection{Goals \& Approaches}
 Now the goal is now to asses whether a \ac{CBR} strategy based on qualitative  representations is viable for an AIBIRDS agent.

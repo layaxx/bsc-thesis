@@ -10,7 +10,9 @@ classifications <- jsonify::from_json( "results.json" )
 
 classifications$affectedTotal <- classifications$actual$m + classifications$actual$d
 classifications$total <- classifications$actual$m + classifications$actual$d + classifications$actual$u
-classifications$ratioOfAffected <- sapply(classifications$new, function(x) unlist(x)[1])/classifications$actualTotal
+classifications$ratioOfAffected <- sapply(classifications$new, function(x) unlist(x)[1])/classifications$total
+
+View(classifications)
  
 
 ggplot(classifications, aes(x =affectedTotal, y=ratioOfAffected)) +

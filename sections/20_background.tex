@@ -1,19 +1,28 @@
 \section{Background}\label{sec:background}
 
+Before the implementation of a \ac{CBR} strategy based on qualitative spatial relations is presented, a brief overview of relevant research areas is given in this section.
+
 \subsection{Case-Based Reasoning}
-Case-Bases Reasoning (CBR) is a method that dates back to the 1980s. It works similarly to how humans operate: Confronted with a novel situation, humans tend to think of similar situations they encountered in the past and try to adapt their previous solution to handle the new scene. Cases therefore typically consist of a description of a problem and a solution. They do not always have to be positive, i.e. show a potential solution, but can also be used to avoid mistakes by providing examples of what not to do in a given situation \cite{Kolodner1992}.
+Case-Bases Reasoning (CBR) is a method that dates back to the 1980s \cite{Schank1983DynamicM} and is based on the premise that similar problems have similar solutions \cite{KI-cbr-2009}.
+It works similarly to how humans approach problem solving: Confronted with a novel situation, humans tend to think of similar situations they encountered in the past and try to adapt their previous solutions to handle the new scene.
+Cases therefore typically consist of a description of a problem and a solution.
+They do not always have to be positive, i.e. show a potential solution, but can also be used to avoid mistakes by providing examples of what not to do in a given situation \cite{Kolodner1992}.
 
-A typical process for \ac{CBR} consists of three steps: Case Retrieval, Adaptation, and Evaluation.\cite{Kolodner1992}
-Confronted with a situation that needs to be solved, a database of known cases is queried and the case that best matches the problem is retrieved. A case consists of at least a description of the situation in which it is applicable and a solution for the problem. Usually situations are similar but not identical, thus the solution may need to be adapted to fit the new situation. The adapted solution can then be executed and its effects can be used to evaluate and potentially update the case.
+A typical process for \ac{CBR} consists of four steps: Case Retrieval, Adaptation, Execution and Evaluation.\cite{Kolodner1992} % TODO: actually 4 probably
+Confronted with a situation that needs to be solved, a database of known cases is queried and the case that is most similar to the problem is retrieved.
+Usually situations are similar but not identical, thus the solution may need to be adapted to fit the new situation. The adapted solution can then be executed and its effects can be used to evaluate and potentially update the case.
 
-
-Recently, CBR has been used in medical fields\cite{medical1, medical2} and robotics\cite{QCBR}, but also for language models \cite{text, text2}. % TODO: citation needed
+% explain database, case retrieval (similarity)
+% TODO: usual approaches to case representation and application
+\ac{CBR} is sometimes combined with other AI methods like Neural Networks, because it can be used to improve the explainability, which is especially important in medial fields \cite{expl-1amador2021case,expl-210.1007/978-3-030-58342-2_22,explainable-https://doi.org/10.48550/arxiv.1710.04806}.
+Those have recently been one of the main areas in which CBR is used\cite{medical1, medical2}, followed by robotics\cite{QCBR}, but also language models \cite{text, text2}.
 
 \subsection{Qualitative Representations and Reasoning}
-Unlike quantitative representations, qualitative representations try to abstract from actual values, thus increasing generalizability.
+While computers often operate on quantitative data, such as pixels in an image or units in a coordinate system or weights in a graph, humans intuitively use more abstract qualitative representations: Objects are usually recognized and described by their position relative to other objects, not by some quantitative representation like a coordinate system \cite{forbus2019qualitative,human-qual-unknown}.
+Dimensions of objects are hard to judge quantitatively for humans as well, it is easier to put them in comparison to other objects. This higher level representation also makes it easier to abstract from actual values and thus transfer knowledge between situations.
 
+Spatial information is often encoded using binary relations from a set of jointly exhaustive and pairwise disjoint relations. The most important categories of spatial information about one or more objects are direction, orientation, distance, size and shape \cite{Cohn2008QualitativeSR}.
 
-% What is CBR?
-% Current Research Status of CBR?
-% Why quantitative? -> abstraction from values
+There are a variety of different calculi for representing and reasoning about such information, each focusing on different aspects \cite{survey-https://doi.org/10.48550/arxiv.1606.00133}.
+
 
