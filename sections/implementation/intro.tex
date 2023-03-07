@@ -9,4 +9,7 @@ The main goal here is to find a set of qualitative predicates for describing obj
 The relative quality will be evaluated in section \ref{sec:experimental} based on the number of levels the agent can beat and the score it achieves on a set of AngryBirds levels.
 
 The order of events is as follows:
-When the agent performs a good randomShot, its effects are determined and it is added to the database. Starting from the next shot, this case is now available to the agent. If a \ac{CBR} case is used to execute a shot, the observed effects can be compared to the expected effects and the underlying case can be refined.
+When the agent performs a good randomShot, its effects are determined and it is added to the database. Starting from the next shot, this case is now available to the agent.
+During the planning phase, the agent can now look through the accumulated case base.
+If one of the cases is sufficiently similar to the situation, it can be used to generate a shot.
+The observed effects of this shot can then be compared to the expected effects and the underlying case can be refined.

@@ -4,17 +4,24 @@ As discussed in \ref{subsec:impl-effects}, recognizing affected objects in gener
 The focus lies on separating moved from destroyed objects.
 A version of this had been implemented in the quantitative \ac{CBR} strategy described in \ref{par:quantititve-cbr} already and was improved for this paper.
 
-The methods described in \ref{subsec:impl-effects}, notably using distance to match objects, improves accuracy. Figure \ref{fig:effects} shows a before and after situation where three identical wooden objects were affected, one was destroyed and two were moved.
+The methods described in \ref{subsec:impl-effects}, notably using distance to match objects that moved, deliver good classification results. Figure \ref{fig:effects} shows a before and after situation where three identical wooden objects were affected, one was destroyed and two were moved.
 To the human eye, it is rather obvious that the left-most wooden tile was destroyed, while the other two just fell down, which is also correct because it was directly hit by a bird which caused the others to topple over.
-While the previous version correctly identified affected objects as well as count of moved and destroyed objects, it did not assign the correct status to each affected object.
 
-The right-most panel of \ref{fig:effects} shows that the improved version correctly identifies every element on this scene.
+The right-most panel of \ref{fig:effects} shows that the implemented version correctly identifies every element on this scene.
 The classification results are layered on top of the before image, objects that were determined to have moved are filled with yellow color while objects that were destroyed are filled with red.
 
-In general the effect detection achieves good results. When objects are misclassified, they are usually labeled as destroyed instead of moved. Those misclassifications are generally caused by the object detection in the vision module instead of the effects classification algorithm.
-For example, the object detection has a hard time determining the boundaries of close-by ice blocks. If a block is damaged by a shot but not destroyed, this also causes the object to sometimes be misclassified as destroyed.
+To assess the quality, a sample of before and after situations was annotated by hand and the effects were compared to those identified by the detection module. Out of 133 objects, 119 (89.5\%) were classified correctly. The classification into unaffected or affected objects was correct in all but one cases (99.2\%).
+When the classification was incorrect, it was mostly moved objects labeled as destroyed, followed by destroyed objects labeled as moved.
 
-There are two main failure modes: misclassification due to incorrect object detection, (usually an object that moved is incorrectly classified as destroyed), misclassification due to incomplete information (e.g. a block was hit and moved to a position where an identical block was before).
-% FIXME: add image here
+There are two main failure modes: The first is incorrect mapping between objects before and after a shot, due to incomplete information. One example is when of two similar objects are affected. If one was destroyed and one moved, the classification sometimes interchanges their effects, which decreases the accuracy score further, because it counts as two incorrect classifications.
+Objects are infrequently misclassified as unaffected if they or a similar object moves into their original position.
+
+The second failure mode is a bias towards classifying affected objects as destroyed, on average the module detected more destructions than actually happened, and fewer moving objects instead.
+This can mostly be attributed to the object detection of the vision module.
+For example, the it has a hard time determining the boundaries of close-by ice blocks and instead joins them into a single object. If a block is damaged by a shot but not destroyed, this also causes the object to sometimes be misclassified as destroyed, because it is recognized as object of type “poly” instead of “rect”.
+
+In general, quality is better if fewer objects are affected. The higher the amount of similar objects that are affected, the higher the chance that the moved and destroyed status is swapped between pairs of similar objects.
+
+\asfigure{fig:effects-result}{data/effects_result}{rate of missclassification depend on number of affected objects, not total number of objects in the scene, as indicated by size of the points and their label}{15}
 
 \asfigure{fig:effects}{data/classification}{before / after / classification; a shot at the left-most wooden object was performed, destrying it and three pigs. Two identical wooden objects were moved but not destroyed. Red objects were classified as destroyed, yellow objects as moved, all others as unaffected.}{15}

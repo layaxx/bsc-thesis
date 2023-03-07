@@ -3,7 +3,7 @@ This rule would generate configurations of objects matching every required predi
 This is necessary because we are not only interested in perfect matches. Instead close matches are used as well to update and generalize cases.
 
 
-This can be seen as instance of a more general Constraint Satisfaction Problem (Max CSP), which is known to be NP hard. For a given case there are $n$ variables, where $n$ is the number of objects affected by the case. The domain for each variable is a subset of all objects in the current level. The goal is to find an assignment (or configuration) of variables, such that no two variables are assigned the same object and that as many relations as possible are satisfied.
+This can be seen as instance of a more general Constraint Satisfaction Problem (Max CSP), which is known to be NP hard \cite{Samorodnitsky2000APC}. For a given case there are $n$ variables, where $n$ is the number of objects affected by the case. The domain for each variable is a subset of all objects in the current level. The goal is to find an assignment (or configuration) of variables, such that no two variables are assigned the same object and that as many relations as possible are satisfied.
 
 Thus, implementing this to find a solution quickly is a major challenge:
 Configurations cannot be discarded as soon as the first relation fails to hold.

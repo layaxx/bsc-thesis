@@ -1,0 +1,50 @@
+[
+  {
+    "level": 2,
+    "actual": { "u": 5, "d": 3, "m": 3 },
+    "old": {
+      "incorrect": 1,
+      "errors": { "MiD": 1 },
+      "result": { "u": 5, "d": 2, "m": 4 }
+    },
+    "new": { "incorrect": 0, "result": { "u": 5, "d": 3, "m": 3 } }
+  },
+  {
+    "level": 5,
+    "actual": { "u": 20, "d": 5, "m": 36 },
+    "old": {
+      "incorrect": 5,
+      "errors": { "MiD": 4, "UiM": 1 },
+      "result": { "u": 21, "d": 1, "m": 39 }
+    },
+    "new": {
+      "incorrect": 10,
+      "errors": { "MiD": 4, "DiM": 6 },
+      "result": { "u": 20, "d": 7, "m": 34 }
+    }
+  },
+  {
+    "level": 8,
+    "actual": { "u": 2, "d": 7, "m": 20 },
+    "old": {
+      "incorrect": 9,
+      "errors": { "MiD": 7, "MiU": 2 },
+      "result": { "u": 0, "d": 0, "m": 29 }
+    },
+    "new": {
+      "incorrect": 4,
+      "errors": { "MiD": 1, "DiM": 3, "DiU": 1 },
+      "result": { "u": 1, "d": 10, "m": 18 }
+    }
+  },
+  {
+    "level": 19,
+    "actual": { "u": 28, "d": 1, "m": 3 },
+    "old": {
+      "incorrect": 1,
+      "errors": { "MiD": 1 },
+      "result": { "u": 28, "d": 0, "m": 4 }
+    },
+    "new": { "incorrect": 0, "result": { "u": 28, "d": 1, "m": 3 } }
+  }
+]

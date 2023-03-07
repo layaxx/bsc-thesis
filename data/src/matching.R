@@ -25,6 +25,8 @@ strsplit(matchScores$V6[[1]], ":")[[1]][[2]]
 # score on y, iterations on x
 # min max median score
 
-ggplot(matchScores, aes(x= time, y= score, color = algorithm)) + geom_point()  +facet_grid(cols = vars(level))
+ggplot(matchScores, aes(x= time, y= score, color = algorithm)) + geom_point()  +
+  facet_wrap(vars(level), nrow = 2)+
+  xlab("time (s)")
 
 ggplot(matchScores, aes(y= time, color = algorithm)) + geom_boxplot() +facet_grid(cols = vars(iterations))

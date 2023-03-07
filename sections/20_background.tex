@@ -1,11 +1,9 @@
 \section{Background}\label{sec:background}
 
 \subsection{Case-Based Reasoning}
-Case-Bases Reasoning (CBR) is a method that dates back to the 1980s. It works similarly to how humans operate: Confronted with a novel situation, humans tend to think of similar situations they encountered in the past and try to adapt their previous solution to handle the new scene. Cases do not always have to be positive, i.e. provide a path to success, they can also be used to avoid errors.\cite{Kolodner1992} For this paper, only positive instances of cases will be considered.
+Case-Bases Reasoning (CBR) is a method that dates back to the 1980s. It works similarly to how humans operate: Confronted with a novel situation, humans tend to think of similar situations they encountered in the past and try to adapt their previous solution to handle the new scene. Cases therefore typically consist of a description of a problem and a solution. They do not always have to be positive, i.e. show a potential solution, but can also be used to avoid mistakes by providing examples of what not to do in a given situation \cite{Kolodner1992}.
 
-One key advantage of CBR over approaches like Deep Learning is that it requires less data and less time to be spent on training. Since the agent generates cases from its own experiences, general knowledge of the the problem domain is not required.\cite{CBR-issues-variations-approaches}
-
-The core \ac{CBR} cycle consists of four steps: Case Retrieval, Adaptation, and Evaluation.\cite{Kolodner1992}
+A typical process for \ac{CBR} consists of three steps: Case Retrieval, Adaptation, and Evaluation.\cite{Kolodner1992}
 Confronted with a situation that needs to be solved, a database of known cases is queried and the case that best matches the problem is retrieved. A case consists of at least a description of the situation in which it is applicable and a solution for the problem. Usually situations are similar but not identical, thus the solution may need to be adapted to fit the new situation. The adapted solution can then be executed and its effects can be used to evaluate and potentially update the case.
 
 

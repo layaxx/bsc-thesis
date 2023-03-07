@@ -14,6 +14,5 @@ If no matching object for $x$ is found, it must have been destroyed and can be r
 
 The remaining objects of $before$ are not yet classified however. Even though every object has at least one potential match, there could be multiple objects in $before$ that match (only) the same object from $after$. In this case, only one of them could have moved, the others must have been destroyed. Thus, if an object $y$ from $after$ has multiple possible matches from $before$, it is assumed that the physically closest matching object in $before$ has moved and both objects can be removed from the sets. At this point, if there are remaining objects in $before$, they must have been destroyed.
 
-This approach is not perfect, but works reasonably well. Apart from more screenshots, which could be used to track objects, future iterations could consider whether physical simulations or heuristics could be used to further improve this part. A possible heuristic could be that objects are likely to move to the right when hit from the left, although this might not be true when slopes come into play or when structures collapse.
-
-
+This approach is not perfect but works reasonably well, as determined by the evaluation in section \ref{subsec:experimental-effects}. Apart from more screenshots, which could be used to track objects, future iterations could consider whether physical simulations or heuristics could be used to further improve this part.
+A possible heuristic could be that objects are likely to move to the right when hit from the left, although this might not be true when slopes come into play or when structures collapse.

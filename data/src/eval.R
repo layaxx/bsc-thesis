@@ -34,6 +34,9 @@ View(strats)
 sum(eval[eval$id == "EIA_split",]$score)
 
 
+ggplot(eval, aes(x = time, y  = score, color=id)) + 
+  geom_point() + facet_wrap(.~level)
+
 ggplot(eval, aes(x = level, y  = score, color=id)) + 
   geom_point() + 
   labs(colour='Set of Relations')

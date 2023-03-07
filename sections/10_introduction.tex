@@ -6,9 +6,14 @@ There are two main kinds of obstacles: blocks that can be moved or destroyed and
 While humans are generally able to achieve good scores on levels, this is not a trivial task for computers.
 Creating an agent capable of doing this is the main goal of AIBIRDS, a yearly competition that started in 2012 \cite{Renz2015AIBIRDSTA}.
 
+\ac{CBR} is a strategy in artificial intelligence in which known solutions to problems are modified in order to make them applicable to the problem at hand.
+To do so, relevant information about the problem and the associated solution need to be stored and similarity between problems must be judged.
+If two problems are similar enough, the solution can be transformed to solve the new problem.
+
+One key advantage of \ac{CBR} over approaches like Deep Learning is that it requires less data and less time to be spent on training. Since the agent generates cases from its own experiences, general knowledge of the the problem domain is not required.\cite{CBR-issues-variations-approaches}
+
 This paper describes the implementation and evaluation of a qualitative case-based reasoning strategy for such an agent, with the goal of providing alternatives to current strategies and potentially improve scoring performance.
 
-The next section describes the background of the work. Then the approach is described, followed by details of the implementation and evaluation results.
 
 \subsection{Previous Work}
 \paragraph{Quantitive Case-Based reasoning}\label{par:quantititve-cbr}
@@ -17,24 +22,21 @@ A case in this context consisted of a set of affected objects (see \ref{subsec:i
 
 A case was applicable to a given scene if a translation exists, such that for every object associated with a case, the scene has an object of the same material and area at the translated coordinates. A translation consists of a shift along the x-axis, a shift along the y-axis as well as a scaling factor.
 
-% TODO: probably already described above
-%% Case-based reasoning is a strategy in artificial intelligence that aims to %% modify known solutions to problems in order to make them applicable to the %% problem at hand.
-%% To do so, relevant information about the problem and the associated solution %% need to be stored and similarity between problems must be judged.
-%% If two problems are similar enough, the solution can be transformed to solve %% the new problem.
-
 
 \cite{QCBR} discusses a similar problem, applying a combination of \ac{CBR} and Reinforcement Learning to robotic soccer players.
-The qualitative spatial representation framework they use, \ac{EOPRA} is one of the options discussed in \ref{subsec:impl-relations}.
+The qualitative spatial representation framework they use, \ac{EOPRA} is one of the candidates analyzed in \ref{subsec:impl-relations}.
 
 
 
 \subsection{Goals \& Approaches}
-
-Now the goal is to devise a qualitative solution.
+Now the goal is now to asses whether a \ac{CBR} strategy based on qualitative  representations is viable for an AIBIRDS agent.
 Instead of absolute positions, relations between objects shall be considered when determining applicability of cases.
-This could lead to an improvement in performance compared to the quantitative approach, as that came with limitations as to what objects were considered and when two scenes where estimated to be transferable. % TODO: should evaluation also be run against the quantitative approach?
-For example, a few pixels could make the difference between an object being irrelevant or an actual obstacle.
-But due to thresholds we used in the quantitative approach, this distinction may not occur. % TODO: add image of a level where this could be an issue
-% TODO: Check wether this level could then be beaten using QualCBR
+This could lead to an improvement in performance compared to the quantitative approach, as that came with limitations as to what objects were considered and when two scenes where estimated to be transferable. For example, a few pixels could make the difference between an object being irrelevant or an actual obstacle.
+But due to thresholds we used in the quantitative approach, this distinction may not occur.
 
-The main objective will consist of comparing subsets of quantitative relations to find those that maximize the score the agent can achieve in-game as well as finding a suitable method for quantifiying scene similarity.
+There are two main questions: What qualitative relations between objects should be used such that cases can be transferred successfully and the agent can achieve a score that is as high as possible?
+How can similarity between scenes be quantified, such that the best matching case can be found in an amount of time appropriate for use in a real-time planning module?
+To answer those questions, such an agent is implemented and different approaches to quantifying scene similarity are compared with respect to performance and quality of solutions. Subsequently, qualitative representations are selected from scientific literature and evaluated.
+
+
+The next section describes the background of the work, followed by details of the implementation and evaluation results.
