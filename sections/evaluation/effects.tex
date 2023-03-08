@@ -1,5 +1,5 @@
 Because effects might be used for evaluating and updating cases, differentiating between moved and destroyed objects is important here.
-As discussed in \ref{subsec:impl-effects}, recognizing affected objects in general is straight forward and works very well unless objects are not or not correctly identified by the vision module, which sometimes happens, especially if a shot leaves debris.
+As discussed in \ref{subsec:impl-effects}, recognizing affected objects, in general, is straightforward and works very well unless objects are not or not correctly identified by the vision module, which sometimes happens, especially if a shot leaves debris.
 
 The focus lies on separating moved from destroyed objects.
 A version of this had been implemented in the quantitative \ac{CBR} strategy described in \ref{subsec:previous} already and was improved for this paper.
@@ -10,18 +10,18 @@ To the human eye, it is rather obvious that the left-most wooden tile was destro
 The right-most panel of \ref{fig:effects} shows that the implemented version correctly identifies every element on this scene.
 The classification results are layered on top of the before image, objects that were determined to have moved are filled with yellow color while objects that were destroyed are filled with red.
 
-To assess the quality, a small sample of before and after situations was annotated by hand and the effects were compared to those identified by the detection module. Out of 133 objects, 119 (89.5\%) were classified correctly. The classification into unaffected or affected objects was correct in all but one cases (99.2\%).
+To assess the quality, a small sample of before and after situations were annotated by hand and the effects were compared to those identified by the detection module. Out of 133 objects, 119 (89.5\%) were classified correctly. The classification into unaffected or affected objects was correct in all but one case (99.2\%).
 When the classification was incorrect, it was mostly moved objects labeled as destroyed, followed by destroyed objects labeled as moved.
 
-There are two main failure modes: The first is incorrect mapping between objects before and after a shot, due to incomplete information. One example is when of two similar objects are affected. If one was destroyed and one moved, the classification sometimes interchanges their effects, which decreases the accuracy score further, because it counts as two incorrect classifications.
+There are two main failure modes: The first is an incorrect mapping between objects before and after a shot, due to incomplete information. One example is when two similar objects are affected. If one was destroyed and one moved, the classification sometimes interchanges their effects, which decreases the accuracy score further, because it counts as two incorrect classifications.
 Objects are infrequently misclassified as unaffected if they or a similar object moves into their original position.
 
-The second failure mode is a bias towards classifying affected objects as destroyed, on average the module detected more destructions than actually happened, and fewer moving objects instead.
+The second failure mode is a bias towards classifying affected objects as destroyed, on average the module detected more destructions than happened, and fewer moving objects instead.
 This can mostly be attributed to the object detection of the vision module.
-For example, the it has a hard time determining the boundaries of close-by ice blocks and instead joins them into a single object. If a block is damaged by a shot but not destroyed, this also causes the object to sometimes be misclassified as destroyed, because it is recognized as object of type “poly” instead of “rect”.
+For example, it has a hard time determining the boundaries of close-by ice blocks and instead joins them into a single object. If a block is damaged by a shot but not destroyed, this also causes the object to sometimes be misclassified as destroyed, because it is recognized as an object of type “poly” instead of “rect”.
 
-In general, quality is better if fewer objects are affected. The higher the amount of similar objects that are affected, the higher the chance that the moved and destroyed status is swapped between pairs of similar objects.
+In general, quality is better if fewer objects are affected. The rate of misclassification increases with the number of affected objects, not the total number of objects in the scene.
 
-\asfigure{fig:effects-result}{data/effects_result}{rate of missclassification depend on number of affected objects, not total number of objects in the scene, as indicated by size of the points and their label}{15}
+\asfigure{fig:effects-result}{data/effects_result}{rate of misclassification depends on the number of affected objects, not the total number of objects in the scene (indicated by the size of the points and their label)}{15}
 
-\asfigure{fig:effects}{data/classification}{before / after / classification; a shot at the left-most wooden object was performed, destrying it and three pigs. Two identical wooden objects were moved but not destroyed. Red objects were classified as destroyed, yellow objects as moved, all others as unaffected.}{15}
+\asfigure{fig:effects}{data/classification}{before / after / classification\\a shot at the left-most wooden object was performed, destroying it and three pigs. Two identical wooden objects were moved but not destroyed. Red objects were classified as destroyed, yellow objects as moved, and all others as unaffected.}{15}

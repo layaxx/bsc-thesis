@@ -1,35 +1,42 @@
 The original idea for matching cases was to add a prolog rule for every new case, consisting of a set of required predicates and a set of optional predicates.
 This rule would generate configurations of objects matching every required predicate for a given case and then check the ratio of optional predicates that hold for this configuration.
-This is necessary because we are not only interested in perfect matches. Instead close matches are used as well to update and generalize cases.
+This is necessary because we are not only interested in perfect matches.
+Instead, imperfect matches are used as well to update and generalize cases.
 
-
-This can be seen as instance of a more general Constraint Satisfaction Problem (Max CSP), which is known to be NP hard \cite{Samorodnitsky2000APC}. For a given case there are $n$ variables, where $n$ is the number of objects affected by the case. The domain for each variable is a subset of all objects in the current level. The goal is to find an assignment (or configuration) of variables, such that no two variables are assigned the same object and that as many relations as possible are satisfied.
+This can be seen as an instance of a more general Constraint Satisfaction Problem (Max CSP), which is known to be NP-hard \cite{Samorodnitsky2000APC}. For a given case there are $n$ variables, where $n$ is the number of objects affected by the case. 
+The domain for each variable is a subset of all objects in the current level. 
+The goal is to find an assignment (or configuration) of variables, such that no two variables are assigned the same object and that as many relations as possible are satisfied.
 
 Thus, implementing this to find a solution quickly is a major challenge:
 Configurations cannot be discarded as soon as the first relation fails to hold.
-Even if the only required predicates are the actual objects, i.e. every object must have a counterpart in the scene but all additional information, such as materials, shape and position are optional, the number of possible permutations that have to be checked are too high to be efficiently checked.
+Even if the only required predicates are the actual objects, i.e. every object must have a counterpart in the scene but all additional information, such as materials, shape and position are optional, the number of possible permutations that have to be checked is too high to be efficiently checked.
 
-Unfortunately, runtime performance is actually important here. While case generation and updating can easily be run as background tasks separate from the actual agent, the detection of applicable strategies needs to happen in real time.
-In order to maximize the amount of time spent performing shots, and thus potentially solving levels and increasing score, the strategy generation needs to be as fast as possible.
+Unfortunately, runtime performance is important here. 
+While case generation and updating be run as asynchronous tasks, the detection of applicable strategies needs to happen in real-time.
+In order to maximize the amount of time spent performing shots, and thus potentially solving levels and increasing the score, the strategy generation needs to be as fast as possible.
 
-Since it is not possible to generate and test every possible solution, another approach must be chosen. A attempt could be made to cut the number of permissible assignments by including more information about the objects as required predicates instead of optionals.
+Since it is not possible to generate and test every possible solution, another approach must be chosen. An attempt could be made to cut the number of permissible assignments by including more information about the objects as required predicates instead of optional.
 The most obvious candidates for this would be shape and material.
 
-The drawback is that cases cannot be generalized over those attributes anymore. While for some cases the material of a block might be important, especially when the goal lies in breaking a block, for other cases the material might not matter.
-With this approach, this will not be detected, however, since the case will never match to other materials und thus cannot be updated.
+The drawback is that cases cannot be generalized over those attributes anymore. While for some cases the material of a block might be important, especially when the goal is to break a block, in other situations the material might not matter.
+This will not be detected, however, since the case will never match other materials and thus cannot be updated.
 
-Another way to decrease the number of possible permutations would be to associate fewer objects with a case. Along with an expected decrease in the accuracy of the system, this approach would probably lower the value for complex planning, as per the definition every object associated with the case is expected to be affected by the shot und thus should be considered during planning.
+Another way to decrease the number of possible permutations would be to associate fewer objects with a case. 
+Along with an expected decrease in the accuracy of the system, this approach would probably lower the value for complex planning, as per the definition every object associated with the case is expected to be affected by the shot and thus should be considered during planning.
 Determining which objects to omit would also be non-trivial.
 
 When implemented in Prolog, there is an issue with its backtracking search: Consider a case with 10 objects: If, for a given configuration of 10 matched objects, none of the optional predicates match, exchanging one of the 10 matched objects cannot possibly meaningfully change the result.
 Because every object only occurs in $1/n$ of predicates, even if this replacement satisfies every relation the new object is a part of, the new configuration still only satisfies $1/10$ of predicates.
 
 A simple way to lower the number of assignments that are checked could be a randomized approach: generating a fixed amount of random configurations matching the hard constraints for each case and checking the soft constraints for each configuration to find the one that matches best.
-At this point, there obviously is no guarantee to find a good match even if a perfect match exists.
+At this point, there is no guarantee to find a good match even if a perfect match exists. 
 
-Another possibility is a local hill-climbing algorithm devised for Max-CSP problems, called Minimum Conflict Heuristic (MCH)\cite{Minton1992MinimizingCA}. After generating a semi-random configuration, i.e. one matching the hard-constraints, a number of iterations is performed. In each step, a random variable that has conflicting relations is substituted with the object from its domain that minimizes conflicts. While not guaranteed to find a global maximum, this is expected to perform better than a completely random approach.
-While the original MCH algorithm chooses a variable in conflict with a uniform distribution, the implementation used here chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object with the more predicates it violates. The algorithms are described in \ref{algo:mch} and \ref{algo:mch_step}.
-The $terminate$ function limits the algorithm to a maximum number of iterations, but can also be used to stop once an assignment is found with a score above a certain threshold or once no improvements are made for a number of iterations.
+Another possibility is a local hill-climbing algorithm devised for Max-CSP problems, called Minimum Conflict Heuristic (MCH)\cite{Minton1992MinimizingCA}. After generating a semi-random configuration, i.e. one matching the hard constraints, several iterations are performed. 
+In each step, a random variable that is part of at least one violated constraint is substituted with the object from its domain which minimizes conflicts. 
+While not guaranteed to find a global maximum, this is expected to perform better than a completely random approach.
+
+While the original MCH algorithm chooses a variable in conflict with a uniform distribution, the implementation used here chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object that has many conflicts. The algorithms are described in \ref{algo:mch} and \ref{algo:mch_step}.
+The $terminate$ function limits the algorithm to a maximum number of iterations, but can also be used to stop once an assignment is found with a score above a certain threshold or once no improvements are made for some iterations.
 
 \begin{algorithm}
     \caption{Adapted MCH algorithm}\label{algo:mch}
@@ -69,7 +76,8 @@ A variation of \ac{MCH} is \ac{WMCH}, introducing a stochastic element once agai
 
 The performance of all three algorithms, along with the number of iterations, is evaluated in the Evaluation section.
 
-Assignments are scored by the percentage of matching relations. An assignment with score 0 violates every predicates for a case, one with score 1 violates none. In addition, no score is granted if the target object cannot be hit, e.g. because it is hidden behind obstacles.
-There might be a perfect match in a scene, but it is of no use to the agent if the shot associated with it cannot be executed or does not reach it's target, because then the expected effects are unlikely to have any relevance.
+Assignments are scored by the percentage of matching relations. An assignment with a score of 0 violates every predicate for a case, and one with a score of 1 violates none. In addition, the score is 0 if the target object cannot be hit, e.g. because it is hidden behind obstacles.
+There might be a perfect match in a scene, but it is of no use to the agent if the shot associated with it cannot be executed or does not reach its target, because then the expected effects are unlikely to have any relevance.
 
-This concludes the case retrieval stage. Because shots are represented by the target object and additional qualitative information of the shot, the adaptation phase is trivial: with the assignment, the target object is known and a shot to this object can be calculated with existing methods.
+This concludes the case retrieval stage. 
+Because shots are represented by the target object and additional qualitative information about the shot, the adaptation phase is trivial: with the assignment, the target object is known and a shot at this object can be calculated with existing methods.

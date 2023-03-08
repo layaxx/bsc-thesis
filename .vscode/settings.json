@@ -26,5 +26,12 @@
   "editor.minimap.autohide": true,
   "editor.minimap.enabled": false,
   "latex-workshop.linting.run": "onType",
-  "latex-workshop.texcount.autorun": "onSave"
+  "latex-workshop.texcount.autorun": "onSave",
+  "grammarly.selectors": [
+    {
+      "language": "latex",
+      "scheme": "file"
+    }
+  ],
+  "cSpell.words": ["explainability", "generalizability", "hexacore"]
 }
