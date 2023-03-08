@@ -10,7 +10,7 @@ To the human eye, it is rather obvious that the left-most wooden tile was destro
 The right-most panel of \ref{fig:effects} shows that the implemented version correctly identifies every element on this scene.
 The classification results are layered on top of the before image, objects that were determined to have moved are filled with yellow color while objects that were destroyed are filled with red.
 
-To assess the quality, a sample of before and after situations was annotated by hand and the effects were compared to those identified by the detection module. Out of 133 objects, 119 (89.5\%) were classified correctly. The classification into unaffected or affected objects was correct in all but one cases (99.2\%).
+To assess the quality, a small sample of before and after situations was annotated by hand and the effects were compared to those identified by the detection module. Out of 133 objects, 119 (89.5\%) were classified correctly. The classification into unaffected or affected objects was correct in all but one cases (99.2\%).
 When the classification was incorrect, it was mostly moved objects labeled as destroyed, followed by destroyed objects labeled as moved.
 
 There are two main failure modes: The first is incorrect mapping between objects before and after a shot, due to incomplete information. One example is when of two similar objects are affected. If one was destroyed and one moved, the classification sometimes interchanges their effects, which decreases the accuracy score further, because it counts as two incorrect classifications.

@@ -1,11 +1,11 @@
 Basis for this is a minimal implementation of an AIBirds Agent called Bambirds-lite, from now on called agent.
 This version only employs very basic strategies that try to directly hit pigs (``targetPig'').
 
-For this project, the targetPig strategy is replaced with a randomShot strategy and the CBR strategy is added.
+For this project, two new strategies are added: a ``randomShot'' strategy and the CBR strategy.
 If no cases are available or match well enough, the agent uses the randomShot strategy targeting any (movable) object. The goal is to generate interesting shots this way that can be saved to the \ac{CBR} database.
 
 The lack of other strategies allows for easy comparison between CBR implementations without interference from previously devised strategies.
-The main goal here is to find a set of qualitative predicates for describing objects and a system for finding similar situations.
+The main focus is on methods for knowledge representation and case retrieval, i.e. the goal is to find a set of qualitative predicates for describing objects and a system for finding similar situations.
 The relative quality will be evaluated in section \ref{sec:experimental} based on the number of levels the agent can beat and the score it achieves on a set of AngryBirds levels.
 
 The order of events is as follows:
