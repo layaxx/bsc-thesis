@@ -8,8 +8,6 @@ Whether this granularity is even useful in an environment where computer vision 
 
 Similar but reduced sets of predicates are the \ac{IA}, originally introduced by \cite{Allen-10.1145/182.358434} and used for temporal representation, which was the basis for \ac{EIA}, and the \ac{RIA}, which groups even more relations. While not technically subsets of EIA, they group several of the relations available in EIA.
 
-\include{includes/tables/relations.tex}
-
 Regardless of which relations are available, they only describe the relation between two intervals. Because we are interested in two-dimensional objects, those relations need to be computed for both the x and y-axis. Every pair of objects is thus described by exactly two relations, one for each axis. Some of these are redundant due to transitive properties.
 Consider a one-dimensional example with objects a, b and c: if a is left of b and b is left of c, a must be left of c, thus it is not technically necessary to save the ``a left of c''  relation.
 To make matching subsets of scenes easier, all relations are kept, even if they are redundant. A subset of scenes in this case would be objects a and c, but not b.

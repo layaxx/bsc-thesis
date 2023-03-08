@@ -57,7 +57,7 @@ When the agent has executed a shot that meets this criterion, one of two things 
 
 To avoid trivial shots, such as direct hits at a pig, which might only affect this one object and thus match every situation, shots are only added to the database if the target object is not a pig.
 
-\begin{lstlisting}[caption=case information outside of Prolog]
+\begin{lstlisting}[caption=exemplary case information outside of Prolog]
 {
   "targetID": "ice8",
   "birdType": "RedBird",
@@ -74,7 +74,7 @@ To avoid trivial shots, such as direct hits at a pig, which might only affect th
 }    
 \end{lstlisting}
 
-\begin{lstlisting}[label=lst:case-prolog, language=Prolog, caption=case information in Prolog]
+\begin{lstlisting}[label=lst:case-prolog, language=Prolog, caption=exemplary case information in Prolog]
 case(cbr_5, [medium, center]).
 testAssignment(cbr_5,[Ice8, Ice28, Ice7, Pig1],Conflicts, Score):-
     hittable(_,Ice8),

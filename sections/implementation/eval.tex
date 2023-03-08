@@ -2,7 +2,7 @@ The planner reports the assignment and the id of the case back to the agent. The
 Because the order is known, the old IDs can be mapped to the IDs of the objects in the current situation with the assignment information. As demonstrated in section \ref{lst:case-prolog}, the assignment in Prolog happens as a List.
 The original list of affected IDs can then be used with the newly obtained list of object IDs in the current scene to replace the original IDs in the effects with the new IDs, thus translating them and obtaining expected effects on the new objects, as can be seen in listing \ref{lst:map}
 
-\begin{lstlisting}[label=lst:map, caption=case information outside of Prolog]
+\begin{lstlisting}[label=lst:map, caption=Exemplary mapping of old to new IDs]
 // original case with old IDs
 {
   "effects": {

@@ -7,13 +7,14 @@ The demo strategy is a fallback strategy employed by the agent if the planner mo
 \asfigure{fig:random-shot}{data/randomshot}{Visualization of shots the randomShot strategy generated on Level 7}{15}
 
 \begin{table}[b]
-    \begin{tabular}{lll}
-                     & candidates & executed \\
-        demo         & 0\%        & 00.56\%  \\
-        randomTop    & 15.00\%    & 11.73\%  \\
-        randomCenter & 71.36\%    & 73.18\%  \\
-        randomBottom & 15.00\%    & 14.53\%
+    \centering
+    \begin{tabular}{l|l|l}
+                              & \textbf{candidates} & \textbf{executed} \\ \hline
+        \textbf{demo}         & 0\%                 & 00.56\%           \\ \hline
+        \textbf{randomTop}    & 15.00\%             & 11.73\%           \\ \hline
+        \textbf{randomCenter} & 71.36\%             & 73.18\%           \\ \hline
+        \textbf{randomBottom} & 15.00\%             & 14.53\%
     \end{tabular}
-    \caption{Frequency of strategies considered and executed while building the DB for Section \ref{subsec:experimental-predicates}}
+    \caption{Frequency of strategies considered and executed while building the case base for section \ref{subsec:experimental-predicates}}
     \label{tab:strat-distribution}
 \end{table}

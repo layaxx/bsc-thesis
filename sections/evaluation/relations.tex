@@ -18,16 +18,16 @@ Relevant data points include the strategies that were considered and which strat
 
 For this purpose, the quality is judged by the maximum score the agent achieves and by whether a case kills the pigs it promised to, regardless of other objects that should have been affected.
 
-Figure \ref{fig:eval-strat-frequency} shows that all versions use cases from \ac{CBR} for about two-thirds of shots. As expected, the least constraining set of relations, \ac{RIA}, leads to more matching cases. This strategy also managed to beat the highest number of levels, although the difference between versions is small, see \ref{fig:eval-number-of-cleared}. Notably, this was the only agent to beat Level 12, see \ref{fig:eval-cleared}.
+Figure \ref{fig:eval-strat-frequency} shows that all versions use cases from \ac{CBR} for about two-thirds of shots. As expected, the least constraining set of relations, \ac{RIA}, leads to more matching cases. This strategy also managed to beat the highest number of levels, although the difference between versions is small, see figure \ref{fig:eval-number-of-cleared}. Notably, this was the only agent to beat Level 12, see figure \ref{fig:eval-cleared}.
 
 With the exception of \ac{IA}, the derivatives of Interval Algebras where the before predicate is split based on whether objects are close enough to hit each other, performed worse than the base versions by score, number of levels cleared and percentage of totally or partially successful applications. This is an unexpected result and, in combination with the good performance of \ac{RIA}, suggests that the \ac{CBR} strategy benefits more from a higher level of abstraction.
 
-Different sets of relations mostly lead to the same case being the best fit for a given scenario. This analysis can only be done for the first shot of any given level because only then the situation is known to be equal between runs. This can be seen in \ref{fig:eval-best-case}. The log from the case generation shows that for example in Level 4, two different perfect matches are available. both of which were found by different agents.
+Different sets of relations mostly lead to the same case being the best fit for a given scenario. This analysis can only be done for the first shot of any given level because only then the situation is known to be equal between runs. This can be seen in figure \ref{fig:eval-best-case}. The log from the case generation shows that for example in Level 4, two different perfect matches are available. both of which were found by different agents.
 
 
-\asfigure{fig:eval-all}{data/eval_all}{Maximum Score by strategy on each level}{15}
-\asfigure{fig:eval-cleared}{data/eval_cleared}{cleared levels for each strategy}{15}
-\asfigure{fig:eval-number-of-cleared}{data/eval_number_of_cleared}{number of cleared levels by strategy}{15}
+\asfigure{fig:eval-all}{data/eval_all}{Maximum Score by strategy on each level}{10}
+\asfigure{fig:eval-cleared}{data/eval_cleared}{cleared levels for each strategy}{10}
+\asfigure{fig:eval-number-of-cleared}{data/eval_number_of_cleared}{number of cleared levels by strategy}{10}
 \asfigure{fig:eval-scores-no-zero}{data/eval_scores_no_zero}{Maximum Score on cleared levels}{15}
 \asfigure{fig:eval-sum-of-scores}{data/eval_sum_of_scores}{Sum of scores over every level}{15}
 \asfigure{fig:eval-strat-frequency}{data/eval_strat_frequency}{Frequency of shots that were considered and executed}{15}
