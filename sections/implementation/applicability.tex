@@ -28,11 +28,11 @@ A simple way to lower the number of assignments that are checked could be a rand
 At this point, there obviously is no guarantee to find a good match even if a perfect match exists.
 
 Another possibility is a local hill-climbing algorithm devised for Max-CSP problems, called Minimum Conflict Heuristic (MCH)\cite{Minton1992MinimizingCA}. After generating a semi-random configuration, i.e. one matching the hard-constraints, a number of iterations is performed. In each step, a random variable that has conflicting relations is substituted with the object from its domain that minimizes conflicts. While not guaranteed to find a global maximum, this is expected to perform better than a completely random approach.
-While the original MCH algorithm chooses a variable in conflict with a uniform distribution, the implementation used here chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object with the more predicates it violates. The algorithms are described in \ref{alog:mch} and \ref{algo:mch_step}.
+While the original MCH algorithm chooses a variable in conflict with a uniform distribution, the implementation used here chooses an object from a random (uniform distribution) violated conflict, thus increasing the chance to pick an object with the more predicates it violates. The algorithms are described in \ref{algo:mch} and \ref{algo:mch_step}.
 The $terminate$ function limits the algorithm to a maximum number of iterations, but can also be used to stop once an assignment is found with a score above a certain threshold or once no improvements are made for a number of iterations.
 
 \begin{algorithm}
-    \caption{Adapted MCH algorithm}\label{alog:mch}
+    \caption{Adapted MCH algorithm}\label{algo:mch}
     \begin{algorithmic}[1]
         \Procedure{mch}{$caseID$}
         \State $bestAssignment\gets randomAssignment(caseID)$
@@ -57,14 +57,15 @@ The $terminate$ function limits the algorithm to a maximum number of iterations,
         \State $constraint \gets violated(caseID, assignment)$
         \State $randomConstraint\gets random\_member(constraints)$
         \State $randomObject \gets random\_from\_constraint(randomConstraint)$
-        \State $bestObject \gets random\_member(\{x \in D(randomObject) \vert x maximises score\})$
+        \State $candidates \gets \{x \in D(randomObject) \vert x\ maximises\ score\}$
+        \State $bestObject \gets random\_member(candidates)$
         \State $assignment \gets replace(assignment, randomObject, bestObject)$
         \State \textbf{return} $assignment$
         \EndProcedure
     \end{algorithmic}
 \end{algorithm}
 
-A variation of MCH is WMCH, introducing a stochastic element once again: Each iteration has a chance to replace a conflicting object with a random eligible object instead of the one minimizing conflicts, thereby introducing a chance to escape local maxima.\cite{KapKis}
+A variation of \ac{MCH} is \ac{WMCH}, introducing a stochastic element once again: Each iteration has a chance to replace a conflicting object with a random eligible object instead of the one minimizing conflicts, thereby introducing a chance to escape local maxima.\cite{KapKis}
 
 The performance of all three algorithms, along with the number of iterations, is evaluated in the Evaluation section.
 
